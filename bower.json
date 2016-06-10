@@ -1,0 +1,17 @@
+{
+  "name": "fen-2016",
+  "homepage": "https://github.com/mkdo/fen-2016",
+  "authors": [
+    "Make Do <events@makedo.net>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

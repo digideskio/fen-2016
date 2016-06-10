@@ -1,0 +1,22 @@
+# Git Ignore for FEN 2016.
+# -----------------------------------------------------------------------------
+
+# Flotsam & Jetsam.
+# -------------------------------------
+.DS_Store
+
+# Assets.
+# -------------------------------------
+assets/css/*
+!assets/css/.gitkeep
+assets/js/lib/modernizr-custom.js
+
+# Composer.
+# -------------------------------------
+composer.lock
+vendor
+
+# Dependencies.
+# -------------------------------------
+bower_components
+node_modules

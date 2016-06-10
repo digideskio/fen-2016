@@ -1,0 +1,42 @@
+// Dependencies
+@import "../../bower_components/normalize-scss/_normalize.scss";
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
+
+// Variables - Bourbon & Neat
+
+// Variables - Custom
+$colour--blue: #3e4459;
+$colour--blue-alt: #3e4f59;
+$colour--yellow: #fffc8a;
+
+// Mixins
+
+// Helpers.
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	// Allow the element to be focusable
+	// when navigated to via the keyboard
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+// Navigation
+.navigation-wrapper {
+	background-color: $colour--blue-alt;
+}
