@@ -1,0 +1,198 @@
+// Variables - Grid
+$base-font-size: 16px;
+$columns: 12;
+$row-width: 1600px;
+
+/// Breakpoint - Extra Extra Small
+/// @type Number
+/// @group responsive
+$bp--xxs: 320px;
+$mq--xxs-min: (min-width: $bp--xxs);
+$mq--xxs-max: (max-width: $bp--xxs - 1);
+
+/// Breakpoint - Extra Small
+/// @type Number
+/// @group responsive
+$bp--xs: 480px;
+$mq--xs-min: (min-width: $bp--xs);
+$mq--xs-max: (max-width: $bp--xs - 1);
+
+/// Breakpoint - Small
+/// @type Number
+/// @group responsive
+$bp--sm: 768px;
+$mq--sm-min: (min-width: $bp--sm);
+$mq--sm-max: (max-width: $bp--sm - 1);
+
+/// Breakpoint - Medium
+/// @type Number
+/// @group responsive
+$bp--md: 1024px;
+$mq--md-min: (min-width: $bp--md);
+$mq--md-max: (max-width: $bp--md - 1);
+
+/// Breakpoint - Large
+/// @type Number
+/// @group responsive
+$bp--lg: 1280px;
+$mq--lg-min: (min-width: $bp--lg);
+$mq--lg-max: (max-width: $bp--lg - 1);
+
+/// Breakpoint - Extra Large
+/// @type Number
+/// @group responsive
+$bp--xl: 1440px;
+$mq--xl-min: (min-width: $bp--xl);
+$mq--xl-max: (max-width: $bp--xl - 1);
+
+/// Breakpoint - Extra Extra Large
+/// @type Number
+/// @group responsive
+$bp--xxl: 1600px;
+$mq--xxl-min: (min-width: $bp--xxl);
+$mq--xxl-max: (max-width: $bp--xxl - 1);
+
+/// Breakpoints map
+/// @prop {String} name - Breakpoint name
+/// @prop {Map} query - Breakpoint query
+/// @group responsive
+/// @see {mixin} mq
+$breakpoints: ("xxs": $mq--xxs-min, "xxs-max": $mq--xxs-max, "xs": $mq--xs-min, "xs-max": $mq--xs-max, "sm": $mq--sm-min, "sm-max": $mq--sm-max, "md": $mq--md-min, "md-max": $mq--md-max, "lg": $mq--lg-min, "lg-max": $mq--lg-max, "xl": $mq--xl-min, "xl-max": $mq--xl-max, "xxl": $mq--xxl-min, "xxl-max": $mq--xxl-max) !default;
+
+// Variables - Colours
+$colour--blue: #3e4459;
+$colour--blue-alt: #2C313F;
+$colour--cream: #FFFED6;
+$colour--yellow: #fffc8a;
+$colour--white: #fff;
+
+// Functions
+@function rem($px-size) {
+	$rem-size: strip-unit($px-size / $base-font-size);
+	@return $rem-size * 1rem;
+}
+
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+// Mixins
+@mixin sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	// Allow the element to be focusable
+	// when navigated to via the keyboard
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+@mixin mq($breakpoint) {
+	$query: map-get($breakpoints, $breakpoint);
+
+	@if not $query {
+		@error "No value found for `#{$breakpoint}`. Please make sure it is defined in either the `$kp-breakpoints` or `$kp-tweakpoints` maps.";
+	}
+
+	@media screen and #{if(type-of($query) == "string", unquote($query), inspect($query))} {
+		@content;
+	}
+}
+
+@mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+
+	@else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+@mixin reset-list($reset-style: false, $float: false) {
+	margin: 0;
+	padding: 0;
+
+	@if $reset-style {
+		list-style: none;
+	}
+
+	@if $float {
+		overflow: hidden;
+	}
+
+	li {
+		@if $float {
+			float: left;
+		}
+	}
+}
+
+@mixin fen-row {
+	@include row;
+	@include outer-container(rem($row-width));
+	padding-left: rem(10px);
+	padding-right: rem(10px);
+	position: relative;
+}
+
+// Grid
+.row {
+	@include fen-row;
+}
+
+.col {
+	@include span-columns($columns);
+	float: left;
+	margin-right: 0;
+	position: relative;
+	$i: 1;
+
+	@each $b, $value in $breakpoints {
+		@include mq($b) {
+			@while $i <= $columns {
+				$perc: unquote(100 / ($columns / $i) + "%");
+
+				&.#{$b}#{$i} {
+					@include span-columns($i);
+				}
+
+				&.offset-#{$b}#{$i} {
+					margin-left: $perc;
+				}
+				$i: $i + 1;
+			}
+		}
+
+		$i: 1;
+	}
+
+	&:last-child {
+		@include omega;
+	}
+}

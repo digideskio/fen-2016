@@ -2,41 +2,147 @@
 @import "../../bower_components/normalize-scss/_normalize.scss";
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
-
-// Variables - Bourbon & Neat
-
-// Variables - Custom
-$colour--blue: #3e4459;
-$colour--blue-alt: #3e4f59;
-$colour--yellow: #fffc8a;
-
-// Mixins
+@import "setup";
 
 // Helpers.
 .sr-only {
-	border: 0;
-	clip: rect(0 0 0 0);
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	// Allow the element to be focusable
-	// when navigated to via the keyboard
-	&.focusable:active,
-	&.focusable:focus {
-		clip: auto;
-		height: auto;
-		margin: 0;
-		overflow: visible;
-		position: static;
-		width: auto;
-	}
+	@include sr-only;
+}
+
+// General
+body {
+	background-color: $colour--blue;
+	color: $colour--white;
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+a,
+button {
+	transition: all ease-in-out 0.3s;
 }
 
 // Navigation
 .navigation-wrapper {
 	background-color: $colour--blue-alt;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.navigation {
+	padding: rem(10px);
+
+	ul {
+		@include reset-list(true);
+
+		@include mq(md) {
+			@include reset-list(true, true);
+		}
+	}
+
+	li {
+		display: inline-block;
+		margin: 0 rem(10px);
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.right {
+		float: right;
+	}
+
+	a {
+		color: $colour--yellow;
+		line-height: 1.5;
+		text-decoration: none;
+
+		@include on-event {
+			color: #FFFED6;
+		}
+	}
+
+	&.secondary {
+		margin-bottom: rem(20px);
+
+		@include mq(md) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Sections
+.section-content {
+	@include fen-row;
+	padding-bottom: rem(50px);
+	padding-top: rem(50px);
+}
+
+// Footer
+.footer-wrapper {
+	background: $colour--blue-alt;
+}
+
+footer {
+	@include fen-row;
+	font-weight: 300;
+	padding-bottom: rem(20px);
+	padding-top: rem(20px);
+	text-align: center;
+
+	@include mq(md) {
+		text-align: left;
+	}
+
+	a {
+		color: $colour--yellow;
+		font-weight: 400;
+		text-decoration: none;
+	}
+}
+
+.social-media {
+	@include reset-list(true);
+	display: inline-block;
+
+	@include mq(md) {
+		float: right;
+	}
+
+	li {
+		display: inline-block;
+		margin: 0 0 0 rem(10px);
+
+		@include mq(md) {
+			margin: 0;
+		}
+	}
+
+	svg {
+		fill: $colour--yellow;
+		transition: fill ease-in-out 0.3s;
+	}
+
+	a {
+		@include on-event {
+			svg {
+				fill: $colour--cream;
+			}
+		}
+	}
+}
+
+.credit {
+	margin-bottom: 0;
+	margin-top: rem(20px);
+	text-align: center;
+
+	span {
+		font-weight: 600;
+		// text-transform: uppercase;
+
+	}
 }
