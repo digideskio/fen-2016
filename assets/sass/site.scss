@@ -21,6 +21,11 @@ button {
 	transition: all ease-in-out 0.3s;
 }
 
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
 // Navigation
 .navigation-wrapper {
 	background-color: $colour--blue-alt;
@@ -32,7 +37,7 @@ button {
 }
 
 .navigation {
-	padding: rem(10px);
+	padding: rem(10px) 0;
 
 	ul {
 		@include reset-list(true);
@@ -74,11 +79,55 @@ button {
 	}
 }
 
+// Intro
+.logo {
+	display: block;
+	margin: 0 auto;
+}
+
 // Sections
+.section-wrapper.white {
+	background-color: $colour--white;
+	color: $colour--blue-alt;
+}
+
 .section-content {
-	@include fen-row;
 	padding-bottom: rem(50px);
 	padding-top: rem(50px);
+
+	&.no-padding {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+
+	p {
+		@include narrow;
+		font-size: rem(24px);
+		font-weight: 300;
+		margin-bottom: rem(24px);
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.section-title {
+	@include narrow;
+	font-size: rem(36px);
+	letter-spacing: 1px;
+	margin-top: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+// Section - Location
+.venue {
+	margin-bottom: rem(50px);
+}
+
+.map {
+	margin-top: rem(50px);
 }
 
 // Footer
@@ -87,7 +136,6 @@ button {
 }
 
 footer {
-	@include fen-row;
 	font-weight: 300;
 	padding-bottom: rem(20px);
 	padding-top: rem(20px);
@@ -114,10 +162,10 @@ footer {
 
 	li {
 		display: inline-block;
-		margin: 0 0 0 rem(10px);
+		margin: 0 rem(10px);
 
 		@include mq(md) {
-			margin: 0;
+			margin: 0 0 0 rem(10px);
 		}
 	}
 
