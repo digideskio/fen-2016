@@ -37,7 +37,7 @@ module.exports = {
 	// Process styles.
 	// -------------------------------------
 	styles: {
-		files: [ 'assets/sass/**/*.scss' ],
+		files: [ 'assets/sass/**/*.scss', '*.html' ],
 		tasks: [
 			'sass',
 			'postcss',

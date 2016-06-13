@@ -60,9 +60,11 @@ $mq--xxl-max: (max-width: $bp--xxl - 1);
 $breakpoints: ("xxs": $mq--xxs-min, "xxs-max": $mq--xxs-max, "xs": $mq--xs-min, "xs-max": $mq--xs-max, "sm": $mq--sm-min, "sm-max": $mq--sm-max, "md": $mq--md-min, "md-max": $mq--md-max, "lg": $mq--lg-min, "lg-max": $mq--lg-max, "xl": $mq--xl-min, "xl-max": $mq--xl-max, "xxl": $mq--xxl-min, "xxl-max": $mq--xxl-max) !default;
 
 // Variables - Colours
+$colour--blue-light: #cfe8eb;
 $colour--blue: #3e4459;
-$colour--blue-alt: #2C313F;
+$colour--blue-dark: #2C313F;
 $colour--cream: #FFFED6;
+$colour--sand: #B2B04F;
 $colour--yellow: #fffc8a;
 $colour--white: #fff;
 

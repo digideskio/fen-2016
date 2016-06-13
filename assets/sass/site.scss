@@ -28,7 +28,7 @@ img {
 
 // Navigation
 .navigation-wrapper {
-	background-color: $colour--blue-alt;
+	background-color: $colour--blue-dark;
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -37,7 +37,7 @@ img {
 }
 
 .navigation {
-	padding: rem(10px) 0;
+	padding: rem(15px) 0;
 
 	ul {
 		@include reset-list(true);
@@ -70,6 +70,10 @@ img {
 		}
 	}
 
+	&.primary {
+		@include fen-row;
+	}
+
 	&.secondary {
 		margin-bottom: rem(20px);
 
@@ -79,16 +83,66 @@ img {
 	}
 }
 
+// Buttons
+.button,
+button {
+	background-color: $colour--yellow;
+	border-radius: 10px;
+	box-shadow: 0 6px $colour--sand;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover {
+		box-shadow: 0 4px $colour--sand;
+		top: 2px;
+	}
+
+	&:active {
+		box-shadow: 0 0 $colour--sand;
+		top: 6px;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		transition: all 0.3s;
+	}
+
+	&.cta {
+		@include narrow;
+		color: $colour--blue-dark;
+		display: block;
+		font-size: rem(24px);
+		font-weight: bold;
+		margin-top: rem(50px);
+		max-width: rem(500px);
+		padding: rem(15px) rem(25px);
+		transition: none;
+	}
+}
+
 // Intro
 .logo {
 	display: block;
 	margin: 0 auto;
 }
 
+.strapline {
+	// text-align: center;
+
+	span {
+		font-weight: 400;
+	}
+}
+
 // Sections
 .section-wrapper.white {
 	background-color: $colour--white;
-	color: $colour--blue-alt;
+	color: $colour--blue-dark;
 }
 
 .section-content {
@@ -104,6 +158,7 @@ img {
 		@include narrow;
 		font-size: rem(24px);
 		font-weight: 300;
+		line-height: 1.5;
 		margin-bottom: rem(24px);
 
 		&:last-of-type {
@@ -121,6 +176,10 @@ img {
 	text-transform: uppercase;
 }
 
+.section-about-title {
+	font-size: rem(48px);
+}
+
 // Section - Location
 .venue {
 	margin-bottom: rem(50px);
@@ -132,7 +191,7 @@ img {
 
 // Footer
 .footer-wrapper {
-	background: $colour--blue-alt;
+	background: $colour--blue-dark;
 }
 
 footer {
