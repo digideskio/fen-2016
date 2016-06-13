@@ -16,6 +16,21 @@ body {
 	font-family: "Source Sans Pro", sans-serif;
 }
 
+p {
+	font-size: rem(24px);
+	font-weight: 300;
+	line-height: 1.5;
+	margin-bottom: rem(24px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+strong {
+	font-weight: 600;
+}
+
 a,
 button {
 	transition: all ease-in-out 0.3s;
@@ -117,7 +132,7 @@ button {
 		color: $colour--blue-dark;
 		display: block;
 		font-size: rem(24px);
-		font-weight: bold;
+		font-weight: 600;
 		margin-top: rem(50px);
 		max-width: rem(500px);
 		padding: rem(15px) rem(25px);
@@ -129,14 +144,6 @@ button {
 .logo {
 	display: block;
 	margin: 0 auto;
-}
-
-.strapline {
-	// text-align: center;
-
-	span {
-		font-weight: 400;
-	}
 }
 
 // Sections
@@ -154,23 +161,16 @@ button {
 		padding-top: 0;
 	}
 
-	p {
+	> p {
 		@include narrow;
-		font-size: rem(24px);
-		font-weight: 300;
-		line-height: 1.5;
-		margin-bottom: rem(24px);
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
 	}
 }
 
 .section-title {
 	@include narrow;
 	font-size: rem(36px);
-	letter-spacing: 1px;
+	font-weight: 600;
+	letter-spacing: 3px;
 	margin-top: 0;
 	text-align: center;
 	text-transform: uppercase;
@@ -178,6 +178,111 @@ button {
 
 .section-about-title {
 	font-size: rem(48px);
+}
+
+// Section - Speakers
+.speakers {
+	margin-top: rem(36px);
+}
+
+.speaker {
+	cursor: pointer;
+	margin: rem(10px) 0;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+
+	@include on-event {
+		.speaker-bio {
+			bottom: 0;
+		}
+	}
+}
+
+.speaker-bio {
+	background-color: $colour--blue-dark;
+	bottom: 100%;
+	height: 100%;
+	left: 0;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: rem(36px) rem(10px) rem(10px);
+	position: absolute;
+	right: 0;
+	transition: bottom ease-in-out 0.4s;
+	width: 100%;
+}
+
+.speaker-name {
+	font-size: rem(24px);
+	font-weight: 400;
+	letter-spacing: 3px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.speaker-title,
+.speaker-twitter {
+	font-size: rem(18px);
+	line-height: 1.25;
+	margin: rem(10px) 0;
+}
+
+.speaker-twitter {
+	font-weight: 400;
+
+	a {
+		color: $colour--yellow;
+		text-decoration: none;
+
+		@include on-event {
+			color: $colour--cream;
+		}
+	}
+}
+
+// Section - Schedule
+.schedule-table {
+	@include fen-row;
+	padding: 0;
+
+	.row {
+		border-bottom: 1px solid $colour--blue-dark;
+		padding: 0;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
+.schedule-time,
+.schedule-description {
+	padding: rem(30px) rem(20px);
+
+	> :first-child {
+		margin-top: 0;
+	}
+}
+
+.schedule-time {
+	font-style: italic;
+
+	p {
+		font-weight: 400;
+	}
+}
+
+.schedule-talk-title {
+	font-size: rem(24px);
+	font-weight: 600;
+	letter-spacing: 3px;
+	margin-bottom: rem(10px);
+	text-transform: uppercase;
+}
+
+.schedule-talk-description {
+	margin-top: 0;
 }
 
 // Section - Location

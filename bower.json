@@ -13,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "jquery-scrollto": "^1.4.4",
+    "matchHeight": "matchheight#^0.7.0"
+  }
 }
