@@ -129,6 +129,7 @@ button {
 		display: block;
 		font-size: rem(24px);
 		font-weight: 700;
+		margin-bottom: rem(50px);
 		margin-top: rem(50px);
 		max-width: rem(500px);
 		padding: rem(15px) rem(25px);
@@ -206,6 +207,23 @@ button {
 
 .section-about-title {
 	font-size: rem(48px);
+}
+
+// Section - About
+.section-about-content {
+	padding-bottom: 0;
+}
+
+.read-on {
+	text-align: center;
+}
+
+.hand-down {
+	display: block;
+	fill: $colour--white;
+	height: rem(48px);
+	margin: rem(50px) auto 0 auto;
+	width: rem(48px);
 }
 
 // Section - Speakers
@@ -391,6 +409,7 @@ button {
 	text-align: center;
 
 	.ticket-cta {
+		margin-bottom: 0;
 		margin-top: rem(10px);
 	}
 }
