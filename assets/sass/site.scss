@@ -18,7 +18,7 @@ body {
 
 p {
 	font-size: rem(24px);
-	font-weight: 300;
+	font-weight: 200;
 	line-height: 1.5;
 	margin-bottom: rem(24px);
 
@@ -28,7 +28,7 @@ p {
 }
 
 strong {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 a,
@@ -132,7 +132,7 @@ button {
 		color: $colour--blue-dark;
 		display: block;
 		font-size: rem(24px);
-		font-weight: 600;
+		font-weight: 700;
 		margin-top: rem(50px);
 		max-width: rem(500px);
 		padding: rem(15px) rem(25px);
@@ -173,7 +173,7 @@ button {
 .section-title {
 	@include narrow;
 	font-size: rem(36px);
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 1.5px;
 	margin-top: 0;
 	text-align: center;
@@ -280,7 +280,7 @@ button {
 
 .schedule-talk-title {
 	font-size: rem(24px);
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 1.5px;
 	margin-bottom: rem(10px);
 	text-transform: uppercase;
@@ -291,27 +291,32 @@ button {
 }
 
 // Section - Location
+.section-location-content {
+	padding-top: 0;
+}
+
 .venue {
 	margin-bottom: rem(50px);
 }
 
 .map {
+	margin-bottom: rem(26px);
 	margin-top: rem(50px);
 }
 
 // Section - Social
-.section-social-content {
-	padding-bottom: 0;
+
+.arches-bar {
+	margin-top: rem(50px);
 }
 
 .the-social {
-	margin-top: rem(50px);
+	margin-bottom: rem(50px);
 }
 
 // Section Benefits
 .benefits {
 	margin-top: rem(50px);
-	text-align: center;
 }
 
 .benefit {
@@ -319,12 +324,24 @@ button {
 	padding: rem(20px);
 }
 
+.benefit-icon {
+	display: block;
+	margin: 0 auto;
+}
+
 .benefit-title {
 	font-size: rem(24px);
 	font-weight: 400;
 	letter-spacing: 1.5px;
-	margin: rem(10px) 0 0;
+	line-height: 1.25;
+	margin: 0 0 rem(20px);
+	text-align: center;
 	text-transform: uppercase;
+}
+
+.benefit-description {
+	font-size: rem(18px);
+	letter-spacing: 1px;
 }
 
 .benefit-icon {
@@ -337,7 +354,7 @@ button {
 }
 
 footer {
-	font-weight: 300;
+	font-weight: 200;
 	padding-bottom: rem(20px);
 	padding-top: rem(20px);
 	text-align: center;
@@ -391,6 +408,6 @@ footer {
 	text-align: center;
 
 	span {
-		font-weight: 600;
+		font-weight: 700;
 	}
 }
