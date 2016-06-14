@@ -174,7 +174,7 @@ button {
 	@include narrow;
 	font-size: rem(36px);
 	font-weight: 600;
-	letter-spacing: 3px;
+	letter-spacing: 1.5px;
 	margin-top: 0;
 	text-align: center;
 	text-transform: uppercase;
@@ -220,7 +220,7 @@ button {
 .speaker-name {
 	font-size: rem(24px);
 	font-weight: 400;
-	letter-spacing: 3px;
+	letter-spacing: 1.5px;
 	margin: 0;
 	text-transform: uppercase;
 }
@@ -248,6 +248,7 @@ button {
 // Section - Schedule
 .schedule-table {
 	@include fen-row;
+	margin-top: rem(50px);
 	padding: 0;
 
 	.row {
@@ -280,7 +281,7 @@ button {
 .schedule-talk-title {
 	font-size: rem(24px);
 	font-weight: 600;
-	letter-spacing: 3px;
+	letter-spacing: 1.5px;
 	margin-bottom: rem(10px);
 	text-transform: uppercase;
 }
@@ -305,6 +306,29 @@ button {
 
 .the-social {
 	margin-top: rem(50px);
+}
+
+// Section Benefits
+.benefits {
+	margin-top: rem(50px);
+	text-align: center;
+}
+
+.benefit {
+	background-color: $colour--blue-dark;
+	padding: rem(20px);
+}
+
+.benefit-title {
+	font-size: rem(24px);
+	font-weight: 400;
+	letter-spacing: 1.5px;
+	margin: rem(10px) 0 0;
+	text-transform: uppercase;
+}
+
+.benefit-icon {
+	fill: $colour--white;
 }
 
 // Footer
@@ -361,13 +385,12 @@ footer {
 }
 
 .credit {
+	font-size: rem(16px);
 	margin-bottom: 0;
 	margin-top: rem(20px);
 	text-align: center;
 
 	span {
 		font-weight: 600;
-		// text-transform: uppercase;
-
 	}
 }
