@@ -414,6 +414,11 @@ button {
 	}
 }
 
+.ticket-type,
+.ticket-price {
+	line-height: 100%;
+}
+
 .ticket-type {
 	font-size: rem(36px);
 	letter-spacing: 3px;
@@ -425,6 +430,7 @@ button {
 	color: $colour--blue-light;
 	font-size: rem(48px);
 	letter-spacing: 1px;
+	margin: rem(10px) 0;
 
 	sup {
 		font-size: rem(16px);
@@ -437,6 +443,7 @@ button {
 	letter-spacing: 1px;
 	line-height: 1.25;
 	margin-bottom: rem(18px) !important;
+	margin-top: 0;
 }
 
 .ticket-cta {
