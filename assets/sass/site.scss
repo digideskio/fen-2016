@@ -137,8 +137,8 @@ button {
 	}
 
 	&.disabled {
-		background-color: #ccc;
-		box-shadow: 0 6px #696969;
+		background-color: $colour--grey;
+		box-shadow: 0 6px $colour--grey-dark;
 		color: $colour--blue-dark;
 
 		@include on-event {
@@ -164,9 +164,33 @@ button {
 }
 
 // Sections
-.section-wrapper.white {
-	background-color: $colour--white;
-	color: $colour--blue-dark;
+.section-wrapper {
+	position: relative;
+
+	// &:after {
+	// 	bottom: -15px;
+	// 	border-color: $colour--blue transparent transparent transparent;
+	// 	border-style: solid;
+	// 	border-width: 15px 12.5px 0 12.5px;
+	// 	content: "";
+	// 	height: 0;
+	// 	left: 0;
+	// 	margin: 0 auto;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 0;
+	// 	z-index: 10;
+	// }
+
+	&.white {
+		background-color: $colour--white;
+		color: $colour--blue-dark;
+
+		// &:after {
+		// 	border-color: $colour--white transparent transparent transparent;
+		// }
+
+	}
 }
 
 .section-content {
