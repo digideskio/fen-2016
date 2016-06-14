@@ -142,8 +142,18 @@ button {
 
 // Intro
 .logo {
-	display: block;
-	margin: 0 auto;
+	@include narrow;
+	color: $colour--blue-light;
+	font-size: rem(156px);
+	font-weight: 200;
+	margin-bottom: rem(50px);
+	margin-top: rem(50px);
+	text-align: center;
+	text-shadow: 3px 3px 5px $colour--blue-dark;
+
+	span {
+		color: $colour--yellow;
+	}
 }
 
 // Sections
@@ -305,7 +315,6 @@ button {
 }
 
 // Section - Social
-
 .arches-bar {
 	margin-top: rem(50px);
 }
@@ -316,6 +325,7 @@ button {
 
 // Section Benefits
 .benefits {
+	margin-bottom: rem(50px);
 	margin-top: rem(50px);
 }
 
@@ -346,6 +356,53 @@ button {
 
 .benefit-icon {
 	fill: $colour--white;
+}
+
+// Section - Tickets
+.tickets {
+	margin-bottom: rem(50px);
+	margin-top: rem(50px);
+}
+
+.ticket {
+	background-color: $colour--blue-dark;
+	color: $colour--white;
+	padding: rem(20px);
+	text-align: center;
+
+	.ticket-cta {
+		margin-top: rem(10px);
+	}
+}
+
+.ticket-type {
+	font-size: rem(36px);
+	letter-spacing: 3px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.ticket-price {
+	color: $colour--blue-light;
+	font-size: rem(48px);
+	letter-spacing: 1px;
+
+	sup {
+		font-size: rem(16px);
+		top: -1.25em;
+	}
+}
+
+.ticket-description {
+	font-size: rem(18px);
+	letter-spacing: 1px;
+	line-height: 1.25;
+	margin-bottom: rem(18px) !important;
+}
+
+.ticket-cta {
+	margin-bottom: rem(5px);
+	margin-top: rem(10px);
 }
 
 // Footer
