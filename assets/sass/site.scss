@@ -56,10 +56,6 @@ img {
 
 	ul {
 		@include reset-list(true);
-
-		@include mq(md) {
-			@include reset-list(true, true);
-		}
 	}
 
 	li {
@@ -138,6 +134,16 @@ button {
 		padding: rem(15px) rem(25px);
 		transition: none;
 	}
+
+	&.disabled {
+		background-color: #ccc;
+		box-shadow: 0 6px #696969;
+		color: $colour--blue-dark;
+
+		@include on-event {
+			cursor: not-allowed;
+		}
+	}
 }
 
 // Intro
@@ -176,6 +182,14 @@ button {
 
 		&:last-of-type {
 			margin-bottom: 0;
+		}
+	}
+
+	p a {
+		color: $colour--yellow;
+
+		.white & {
+			color: $colour--blue;
 		}
 	}
 }
@@ -231,8 +245,13 @@ button {
 	font-size: rem(24px);
 	font-weight: 400;
 	letter-spacing: 1.5px;
+	line-height: 1.25;
 	margin: 0;
 	text-transform: uppercase;
+
+	span {
+		display: block;
+	}
 }
 
 .speaker-title,
@@ -366,6 +385,7 @@ button {
 
 .ticket {
 	background-color: $colour--blue-dark;
+	border-radius: 15px;
 	color: $colour--white;
 	padding: rem(20px);
 	text-align: center;
@@ -405,6 +425,39 @@ button {
 	margin-top: rem(10px);
 }
 
+// Section - Sponsors
+.sponsors {
+	@include narrow;
+	margin-top: rem(50px);
+	text-align: center;
+}
+
+.sponsor-logo {
+	margin: rem(10px);
+}
+
+.sponsor-tier-name {
+	letter-spacing: 3px;
+	margin: rem(20px) 0;
+	text-transform: uppercase;
+
+	&.steel {
+		font-size: rem(32px);
+	}
+
+	&.iron {
+		font-size: rem(28px);
+	}
+
+	&.aluminium {
+		font-size: rem(24px);
+	}
+}
+
+.sponsors-email {
+	margin-bottom: rem(50px);
+}
+
 // Footer
 .footer-wrapper {
 	background: $colour--blue-dark;
@@ -416,10 +469,6 @@ footer {
 	padding-top: rem(20px);
 	text-align: center;
 
-	@include mq(md) {
-		text-align: left;
-	}
-
 	a {
 		color: $colour--yellow;
 		font-weight: 400;
@@ -430,10 +479,7 @@ footer {
 .social-media {
 	@include reset-list(true);
 	display: inline-block;
-
-	@include mq(md) {
-		float: right;
-	}
+	margin-top: rem(8px);
 
 	li {
 		display: inline-block;
@@ -450,6 +496,10 @@ footer {
 	}
 
 	a {
+		display: block;
+		height: rem(36px);
+		width: rem(36px);
+
 		@include on-event {
 			svg {
 				fill: $colour--cream;
