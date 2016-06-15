@@ -18,11 +18,15 @@ body {
 }
 
 p {
-	font-size: rem(24px);
+	font-size: rem(20px);
 	font-weight: 200;
 	letter-spacing: 0.5px;
 	line-height: 1.5;
 	margin-bottom: rem(24px);
+
+	@include mq(xs) {
+		font-size: rem(24px);
+	}
 
 	&:last-child {
 		margin-bottom: 0;
@@ -54,8 +58,6 @@ img {
 }
 
 .navigation {
-	padding: rem(15px) 0;
-
 	ul {
 		@include reset-list(true);
 	}
@@ -69,31 +71,65 @@ img {
 		}
 	}
 
-	.right {
-		float: right;
-	}
-
 	a {
-		color: $colour--yellow;
 		letter-spacing: 0.5px;
 		line-height: 1.5;
 		text-decoration: none;
 
 		@include on-event {
-			color: #FFFED6;
+			color: $colour--blue-light;
 		}
 	}
 
 	&.primary {
 		@include fen-row;
+		display: none;
+		margin-bottom: rem(10px);
+		margin-top: rem(10px);
+		padding: rem(10px);
+		text-transform: uppercase;
+
+		@include mq(md) {
+			display: block;
+		}
+
+		a {
+			color: $colour--yellow;
+
+			@include on-event {
+				color: $colour--blue-light;
+			}
+		}
+
+		.button-alt {
+			background-color: $colour--yellow;
+			border: 1px solid black;
+			border-bottom-width: 2px;
+			border-radius: 7.5px;
+			color: $colour--blue-dark;
+			font-weight: 700;
+			padding: rem(5px) rem(25px);
+			text-decoration: none;
+
+			@include on-event {
+				background-color: $colour--blue-light;
+				color: $colour--blue-dark;
+			}
+		}
 	}
 
 	&.secondary {
+		color: $colour--yellow;
+		padding: rem(15px) 0;
 		margin-bottom: rem(20px);
 
 		@include mq(md) {
 			margin-bottom: 0;
 		}
+	}
+
+	.right {
+		float: right;
 	}
 }
 
@@ -133,11 +169,16 @@ button {
 		display: block;
 		font-size: rem(24px);
 		font-weight: 700;
-		margin-bottom: rem(50px);
-		margin-top: rem(50px);
+		margin-bottom: rem(30px);
+		margin-top: rem(30px);
 		max-width: rem(500px);
-		padding: rem(15px) rem(25px);
+		padding: rem(15px);
 		transition: none;
+
+		@include mq(sm) {
+			margin-bottom: rem(50px);
+			margin-top: rem(50px);
+		}
 	}
 
 	&.disabled {
@@ -155,12 +196,16 @@ button {
 .logo {
 	@include narrow;
 	color: $colour--blue-light;
-	font-size: rem(156px);
+	font-size: rem(102px);
 	font-weight: 200;
 	margin-bottom: rem(50px);
-	margin-top: rem(50px);
+	margin-top: rem(114px);
 	text-align: center;
 	text-shadow: 3px 3px 5px $colour--blue-dark;
+
+	@include mq(xs) {
+		font-size: rem(156px);
+	}
 
 	span {
 		color: $colour--yellow;
@@ -169,39 +214,24 @@ button {
 
 // Sections
 .section-wrapper {
-	border-bottom: 2px solid $colour--blue-dark;
-	border-top: 2px solid $colour--blue-dark;
+	border-bottom: 4px solid $colour--blue-dark;
+	border-top: 4px solid $colour--blue-dark;
 	position: relative;
-
-	// &:after {
-	// 	bottom: -15px;
-	// 	border-color: $colour--blue transparent transparent transparent;
-	// 	border-style: solid;
-	// 	border-width: 15px 12.5px 0 12.5px;
-	// 	content: "";
-	// 	height: 0;
-	// 	left: 0;
-	// 	margin: 0 auto;
-	// 	position: absolute;
-	// 	right: 0;
-	// 	width: 0;
-	// 	z-index: 10;
-	// }
 
 	&.white {
 		background-color: $colour--white;
 		color: $colour--blue-dark;
-
-		// &:after {
-		// 	border-color: $colour--white transparent transparent transparent;
-		// }
-
 	}
 }
 
 .section-content {
-	padding-bottom: rem(50px);
-	padding-top: rem(50px);
+	padding-bottom: rem(30px);
+	padding-top: rem(30px);
+
+	@include mq(sm) {
+		padding-bottom: rem(50px);
+		padding-top: rem(50px);
+	}
 
 	&.no-padding {
 		padding-bottom: 0;
@@ -226,6 +256,7 @@ button {
 
 	p a {
 		color: $colour--yellow;
+		font-weight: 700;
 
 		@include on-event {
 			color: $colour--blue-light;
@@ -233,31 +264,39 @@ button {
 
 		.white & {
 			color: $colour--blue;
+
+			@include on-event {
+				color: $colour--blue-dark;
+			}
 		}
 	}
 }
 
 .section-title {
 	@include narrow;
-	font-size: rem(36px);
+	font-size: rem(32px);
 	font-weight: 700;
 	letter-spacing: 1.5px;
 	margin-top: 0;
 	text-align: center;
 	text-transform: uppercase;
+
+	@include mq(sm) {
+		font-size: rem(36px);
+	}
 }
 
 .section-about-title {
-	font-size: rem(48px);
+	font-size: rem(38px);
+
+	@include mq(sm) {
+		font-size: rem(48px);
+	}
 }
 
 // Section - About
 .section-about-wrapper {
 	border: 0;
-}
-
-.section-about-content {
-	padding-bottom: 0;
 }
 
 .read-on {
@@ -356,7 +395,7 @@ button {
 		text-decoration: none;
 
 		@include on-event {
-			color: $colour--cream;
+			color: $colour--blue-light;
 		}
 	}
 }
@@ -364,12 +403,20 @@ button {
 // Section - Schedule
 .schedule-table {
 	@include fen-row;
-	margin-top: rem(50px);
-	padding: 0;
+	margin-top: rem(30px);
+
+	@include mq(sm) {
+		margin-top: rem(50px);
+		padding: 0;
+	}
 
 	.row {
 		border-bottom: 1px solid #ccc;
-		padding: 0;
+		padding: 0 0 rem(20px);
+
+		@include mq(sm) {
+			padding: 0;
+		}
 
 		&:last-child {
 			border-bottom: 0;
@@ -383,16 +430,25 @@ button {
 
 .schedule-time,
 .schedule-description {
-	padding: rem(30px) rem(20px);
+	@include mq(sm) {
+		padding: rem(30px) rem(20px);
+	}
 
 	> :first-child {
-		margin-top: 0;
+		@include mq(sm) {
+			margin-top: 0;
+		}
 	}
 }
 
 .schedule-time {
 	font-style: italic;
 	padding-right: 0;
+	text-align: center;
+
+	@include mq(sm) {
+		text-align: left;
+	}
 
 	p {
 		font-weight: 400;
@@ -404,7 +460,12 @@ button {
 	font-weight: 700;
 	letter-spacing: 1.5px;
 	margin-bottom: rem(10px);
+	margin-top: rem(20px);
 	text-transform: uppercase;
+
+	@include mq(sm) {
+		margin-top: 0;
+	}
 }
 
 .schedule-talk-description {
@@ -418,14 +479,23 @@ button {
 
 .venue-carousel {
 	margin-bottom: rem(50px);
+
+	@include mq(sm) {
+		margin-bottom: rem(50px);
+	}
 }
 
 .map {
 	height: reme(500px);
-	margin-bottom: rem(50px);
-	margin-top: rem(50px);
+	margin-bottom: rem(30px);
+	margin-top: rem(30px);
 	overflow: hidden;
 	width: 100%;
+
+	@include mq(sm) {
+		margin-bottom: rem(50px);
+		margin-top: rem(50px);
+	}
 }
 
 #gmap_canvas {
@@ -440,23 +510,45 @@ button {
 
 // Section - Social
 .arches-bar {
-	margin-top: rem(50px);
+	margin-top: rem(30px);
+
+	@include mq(sm) {
+		margin-top: rem(50px);
+	}
 }
 
 .the-social {
-	margin-bottom: rem(50px);
+	margin-bottom: rem(30px);
+
+	@include mq(sm) {
+		margin-bottom: rem(50px);
+	}
 }
 
 // Section Benefits
 .benefits {
-	margin-bottom: rem(50px);
-	margin-top: rem(50px);
+	margin-bottom: rem(30px);
+	margin-top: rem(30px);
+
+	@include mq(sm) {
+		margin-bottom: rem(50px);
+		margin-top: rem(50px);
+	}
 }
 
 .benefit {
 	background-color: $colour--blue-dark;
 	border-radius: rem(15px);
+	margin-top: rem(20px);
 	padding: rem(20px);
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@include mq(sm) {
+		margin-top: 0;
+	}
 }
 
 .benefit-icon {
@@ -473,24 +565,49 @@ button {
 	margin: 0 0 rem(20px);
 	text-align: center;
 	text-transform: uppercase;
+
+	span {
+		@include mq(sm) {
+			display: block;
+		}
+	}
 }
 
 .benefit-description {
 	font-size: rem(18px);
+	text-align: center;
+
+	@include mq(sm) {
+		text-align: left;
+	}
 }
 
 // Section - Tickets
 .tickets {
-	margin-bottom: rem(50px);
-	margin-top: rem(50px);
+	margin-bottom: rem(30px);
+	margin-top: rem(30px);
+
+	@include mq(sm) {
+		margin-bottom: rem(50px);
+		margin-top: rem(50px);
+	}
 }
 
 .ticket {
 	background-color: $colour--blue-dark;
 	border-radius: 15px;
 	color: $colour--white;
+	margin-top: rem(20px);
 	padding: rem(20px);
 	text-align: center;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@include mq(sm) {
+		margin-top: 0;
+	}
 
 	.ticket-cta {
 		margin-bottom: 0;
@@ -504,10 +621,14 @@ button {
 }
 
 .ticket-type {
-	font-size: rem(36px);
+	font-size: rem(32px);
 	letter-spacing: 3px;
 	margin: 0;
 	text-transform: uppercase;
+
+	@include mq(md) {
+		font-size: rem(36px);
+	}
 }
 
 .ticket-price {
@@ -592,6 +713,7 @@ footer {
 		text-align: center;
 
 		span {
+			color: $colour--blue-light;
 			font-weight: 700;
 		}
 	}
@@ -624,7 +746,7 @@ footer {
 
 		@include on-event {
 			svg {
-				fill: $colour--cream;
+				fill: $colour--blue-light;
 			}
 		}
 	}

@@ -15,11 +15,14 @@
 
 <body>
     <!-- @todo -->
-    <!-- 1. Complete responsive updates. -->
-    <!-- 2. Add microformats where possible. -->
-    <!-- 3. Colour contrast checks -->
-    <!-- 4. Colour blindness checks -->
+    <!-- 1. Finish off the responsive polish -->
+    <!-- 2. Implement responsive images -->
+    <!-- 2. Build the mobile menu -->
+    <!-- 3. Add microformats where possible. -->
+    <!-- 4. Colour contrast checks -->
+    <!-- 5. Colour blindness checks -->
     <a class="sr-only" href="#section-about">Skip to main content</a>
+    <header>
     <div class="navigation-wrapper">
         <nav id="navigation" class="navigation primary">
             <div class="col">
@@ -50,18 +53,20 @@
                         <a href="#section-conduct">Conduct</a>
                     </li>
                     <li class="right">
-                        <a href="#section-tickets" class="button">Buy Tickets</a>
+                        <a href="#section-tickets" class="button-alt">Tickets</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
+    <h1 class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></h1>
+    </header>
     <main>
         <article>
             <!-- Section: About -->
             <div id="section-about" class="section-about-wrapper section-wrapper">
-                <div class="section-about-content section-content" aria-labelledby="section-about-title">
-                    <div class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></div>
+                <div class="section-about-content section-content no-padding" aria-labelledby="section-about-title">
+
                     <h1 id="section-about-title" class="section-about-title section-title">Front-end North <span aria-hidden="true">2016</span><span class="sr-only">twenty sixteen</span></h1>
                     <p class="strapline">A full-day, not-for-profit conference for front-end developers, designers and people who make things for the web taking place on <strong>September <span aria-hidden="true">30th, 2016</span><span class="sr-only">thirtieth twenty sixteen</span></strong> at Sheffield City Hall.</p>
                     <p>Returning from a year's hiatus after our successful debut in <span aria-hidden="true">2014</span><span class="sr-only">twenty fourteen</span> we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p>
@@ -308,7 +313,7 @@
                         <!-- Talk 5 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p><span aria-hidden="true">14:40pm - 15:20pm</span><span class="sr-only">Two Forty until Three Twenty</span></p>
+                                <p><span aria-hidden="true">2:40pm - 3:20pm</span><span class="sr-only">Two Forty until Three Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -318,7 +323,7 @@
                         <!-- Mid-afternoon Break -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p><span aria-hidden="true">15:20pm - 15:40pm</span><span class="sr-only">Three Twenty until Three Forty</span></p>
+                                <p><span aria-hidden="true">3:20pm - 3:40pm</span><span class="sr-only">Three Twenty until Three Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Mid-afternoon <strong>break</strong> with refreshments.</p>
@@ -327,7 +332,7 @@
                         <!-- Talk 6 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p><span aria-hidden="true">15:40pm - 16:20pm</span><span class="sr-only">Three Forty until Four Twenty</span></p>
+                                <p><span aria-hidden="true">3:40pm - 4:20pm</span><span class="sr-only">Three Forty until Four Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -337,7 +342,7 @@
                         <!-- Talk 7 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p><span aria-hidden="true">16:20pm - 17:00pm</span><span class="sr-only">Four Twenty until Five O'Clock</span></p>
+                                <p><span aria-hidden="true">4:20pm - 5:00pm</span><span class="sr-only">Four Twenty until Five O'Clock</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -347,7 +352,7 @@
                         <!-- Talk 8 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p><span aria-hidden="true">17:00pm - 17:40pm</span><span class="sr-only">Five O'Clock until Five Forty</span></p>
+                                <p><span aria-hidden="true">5:00pm - 5:40pm</span><span class="sr-only">Five O'Clock until Five Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -381,7 +386,8 @@
                 <section class="section-location-content section-content" aria-labelledby="section-location-title">
                     <div id="venue-carousel" class="venue-carousel">
                         <img src="img/venue.jpg" alt="Sheffield City Hall" />
-                        <img src="img/ballroom.jpg" alt="Ballroom at Sheffield City Hall" />
+                        <img src="img/ballroom_angle.jpg" alt="Ballroom at Sheffield City Hall" />
+                        <img src="img/ballroom_seating.jpg" alt="Ballroom at Sheffield City Hall" />
                     </div>
                     <h2 id="section-location-title" class="section-location-title section-title">Fantastic Venue &amp; Location</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur ut sollicitudin nunc.</p>
@@ -439,29 +445,29 @@
                     <h2 id="section-benefits-title" class="section-benefits-title section-title">Other Great Benefits</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.</p>
                     <div class="row benefits">
-                        <div class="col sm3 benefit">
-                            <h3 class="benefit-title">Competition <br/> Prizes to Win</h3>
+                        <div class="col sm6 md3 benefit">
+                            <h3 class="benefit-title">Competition <span>Prizes to Win</span></h3>
                             <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M1056 1356V640H736v716q0 25 18 38.5t46 13.5h192q28 0 46-13.5t18-38.5zM600 512h195L669 351q-26-31-69-31-40 0-68 28t-28 68 28 68 68 28zm688-96q0-40-28-68t-68-28q-43 0-69 31L998 512h194q40 0 68-28t28-68zm376 256v320q0 14-9 23t-23 9h-96v416q0 40-28 68t-68 28H352q-40 0-68-28t-28-68v-416h-96q-14 0-23-9t-9-23V672q0-14 9-23t23-9h440q-93 0-158.5-65.5T376 416t65.5-158.5T600 192q107 0 168 77l128 165 128-165q61-77 168-77 93 0 158.5 65.5T1416 416t-65.5 158.5T1192 640h440q14 0 23 9t9 23z" />
                             </svg>
                             <p class="benefit-description">Enter our competitions for a chance to win one of our great (and useful) prizes. <strong>#swag</strong></p>
                         </div>
-                        <div class="col sm3 benefit">
-                            <h3 class="benefit-title">Find or List <br/> Opportunities</h3>
+                        <div class="col sm6 md3 benefit">
+                            <h3 class="benefit-title">Find or List <span>Opportunities</span></h3>
                             <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M529 896q-162 5-265 128H130q-82 0-138-40.5T-64 865q0-353 124-353 6 0 43.5 21t97.5 42.5T320 597q67 0 133-23-5 37-5 66 0 139 81 256zm1071 637q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1533q0-53 3.5-103.5t14-109T236 1212t43-97.5 62-81 85.5-53.5T538 960q10 0 43 21.5t73 48 107 48 135 21.5 135-21.5 107-48 73-48 43-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zM576 256q0 106-75 181t-181 75-181-75-75-181 75-181T320 0t181 75 75 181zm704 384q0 159-112.5 271.5T896 1024 624.5 911.5 512 640t112.5-271.5T896 256t271.5 112.5T1280 640zm576 225q0 78-56 118.5t-138 40.5h-134q-103-123-265-128 81-117 81-256 0-29-5-66 66 23 133 23 59 0 119-21.5t97.5-42.5 43.5-21q124 0 124 353zm-128-609q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181z" />
                             </svg>
                             <p class="benefit-description">Use our career boards if you have a vacancy in your dev team, or need a new challenge.</p>
                         </div>
-                        <div class="col sm3 benefit">
-                            <h3 class="benefit-title">Discount <br/> Car Parking</h3>
+                        <div class="col sm6 md3 benefit">
+                            <h3 class="benefit-title">Discount <span>Car Parking</span></h3>
                             <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M352 1088q0-66-47-113t-113-47-113 47-47 113 47 113 113 47 113-47 47-113zm36-320h1016l-89-357q-2-8-14-17.5t-21-9.5H512q-9 0-21 9.5T477 411zm1372 320q0-66-47-113t-113-47-113 47-47 113 47 113 113 47 113-47 47-113zm160-96v384q0 14-9 23t-23 9h-96v128q0 80-56 136t-136 56-136-56-56-136v-128H384v128q0 80-56 136t-136 56-136-56-56-136v-128h-96q-14 0-23-9t-9-23V992q0-93 65.5-158.5T96 768h28l105-419q23-94 104-157.5T512 128h768q98 0 179 63.5T1563 349l105 419h28q93 0 158.5 65.5T1920 992z" />
                             </svg>
                             <p class="benefit-description">Park your car/unicorn at the Q-Park adjacent to the venue for just <strong aria-hidden="true">£3.50</strong><span class="sr-only">Three Pounds Fifty</span> for the whole day.</p>
                         </div>
-                        <div class="col sm3 benefit">
-                            <h3 class="benefit-title">Discount <br/> Hotel Rooms</h3>
+                        <div class="col sm6 md3 benefit">
+                            <h3 class="benefit-title">Discount <span>Hotel Rooms</span></h3>
                             <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M128 1024h1728q26 0 45 19t19 45v448h-256v-256H128v256h-256V320q0-26 19-45t45-19H64q26 0 45 19t19 45v704zm576-320q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm1216 256v-64q0-159-112.5-271.5T1536 512H832q-26 0-45 19t-19 45v384h1152z" />
                             </svg>
@@ -480,21 +486,21 @@
                         <div class="row">
                             <div class="col sm4 ticket">
                                 <h3 class="ticket-type">Early Bird</h3>
-                                <div class="ticket-price"><span aria-hidden="true">£85.00</span><span class="sr-only">Eighty Five Ppounds</span> <sup>+VAT</sup></div>
+                                <div class="ticket-price"><span aria-hidden="true">£85</span><span class="sr-only">Eighty Five Ppounds</span> <sup>+VAT</sup></div>
                                 <p class="ticket-description">A limited number of early bird tickets are on sale now.</p>
                                 <a class="ticket-cta button cta" href="#">Buy Now</a>
                             </div>
                             <div class="col sm4 ticket">
                                 <h3 class="ticket-type">Students</h3>
-                                <div class="ticket-price"><span aria-hidden="true">£45.00</span><span class="sr-only">Forty Five Pounds</span> <sup>+VAT</sup></div>
+                                <div class="ticket-price"><span aria-hidden="true">£45</span><span class="sr-only">Forty Five Pounds</span> <sup>+VAT</sup></div>
                                 <p class="ticket-description">A limited number of tickets for those with a valid NUS ID.</p>
                                 <a class="ticket-cta button cta" href="#">Buy Now</a>
                             </div>
                             <div class="col sm4 ticket">
                                 <h3 class="ticket-type">Delegates</h3>
-                                <div class="ticket-price"><span aria-hidden="true">£120.00</span><span class="sr-only">One Hundred and Twenty Pounds</span> <sup>+VAT</sup></div>
+                                <div class="ticket-price"><span aria-hidden="true">£120</span><span class="sr-only">One Hundred and Twenty Pounds</span> <sup>+VAT</sup></div>
                                 <p class="ticket-description">The standard full-price rate for Front-end North 2016.</p>
-                                <div class="ticket-cta button cta disabled">Coming soon...</div>
+                                <div class="ticket-cta button cta disabled">Coming soon!</div>
                             </div>
                         </div>
                     </div>
