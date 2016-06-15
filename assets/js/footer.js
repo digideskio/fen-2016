@@ -8,7 +8,7 @@ jQuery(function($) {
 	    var $target = $(target);
 
 	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
+	        'scrollTop': $target.offset().top - $('.navigation-wrapper').outerHeight()
 	    }, 900, 'swing' );
 	});
 
