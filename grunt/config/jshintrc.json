@@ -5,7 +5,7 @@
 	"eqnull": true,
 	"es3": true,
 	"expr": true,
-	"immed": true,
+	"immed": false,
 	"noarg": true,
 	"nonbsp": true,
 	"onevar": true,

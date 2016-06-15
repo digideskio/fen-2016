@@ -33,6 +33,7 @@ module.exports = function(grunt) {
 			// -------------------------------------
 			concatFoot: [
 				'bower_components/underscore/underscore.js',
+				'bower_components/slick-carousel/slick/slick.js',
 				'assets/js/footer.js'
 			],
 		}

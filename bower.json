@@ -17,6 +17,7 @@
   "devDependencies": {
     "jquery-scrollto": "^1.4.4",
     "matchHeight": "matchheight#^0.7.0",
-    "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release"
+    "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release",
+    "slick-carousel": "^1.6.0"
   }
 }

@@ -2,6 +2,7 @@
 @import "../../bower_components/normalize-scss/_normalize.scss";
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 @import "setup";
 
 // Helpers.
@@ -395,7 +396,7 @@ button {
 	padding-top: 0;
 }
 
-.venue {
+.venue-carousel {
 	margin-bottom: rem(50px);
 }
 
