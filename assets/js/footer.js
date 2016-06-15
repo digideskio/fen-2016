@@ -1,5 +1,17 @@
 jQuery(function($) {
 
+	// Smooth scrolling to anchors
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing' );
+	});
+
 	// Init Slick Carousels
     function slickInit(target, autoplay, autoplaySpeed, speed, fade, arrows, dots, show, prev, next) {
         $(target).slick({

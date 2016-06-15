@@ -401,8 +401,15 @@ button {
 }
 
 .map {
-	margin-bottom: rem(26px);
+	height: 500px;
+	margin-bottom: rem(50px);
 	margin-top: rem(50px);
+	overflow: hidden;
+	width: 100%;
+}
+
+.gm-style-iw {
+	color: $colour--blue-dark;
 }
 
 // Section - Social
