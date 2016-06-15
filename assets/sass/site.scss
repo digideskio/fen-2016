@@ -327,6 +327,7 @@ button {
 }
 
 .speaker-name {
+	color: $colour--blue-light;
 	font-size: rem(24px);
 	font-weight: 400;
 	letter-spacing: 1.5px;
@@ -337,10 +338,6 @@ button {
 	span {
 		display: block;
 	}
-}
-
-.speaker-title {
-	color: $colour--blue-light;
 }
 
 .speaker-title,
@@ -456,7 +453,7 @@ button {
 
 .benefit-icon {
 	display: block;
-	fill: $colour--white;
+	fill: $colour--blue-light;
 	margin: 0 auto;
 }
 

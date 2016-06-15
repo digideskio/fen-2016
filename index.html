@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
     <title>Front-end North 2016</title>
-    <meta name="description" content="A full-day, not-for-profit conference for front-end developers, designers and people who make things for the web taking place on September 30th, 2016 at Sheffield City Hall.">
+    <meta name="description" content="A conference for front-end developers, designers and people who make things for the web taking place on September 30th, 2016 at Sheffield City Hall.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,9 @@
     <!-- @todo -->
     <!-- 1. Complete responsive updates. -->
     <!-- 2. Add microformats where possible. -->
+    <!-- 3. Colour contrast checks -->
+    <!-- 4. Colour blindness checks -->
+    <a class="sr-only" href="#section-about">Skip to main content</a>
     <div class="navigation-wrapper">
         <nav id="navigation" class="navigation primary">
             <div class="col">
@@ -58,13 +61,13 @@
             <!-- Section: About -->
             <div id="section-about" class="section-about-wrapper section-wrapper">
                 <div class="section-about-content section-content" aria-labelledby="section-about-title">
-                    <div class="logo"><span>&lt;</span>FEN<span>/&gt;</span></div>
-                    <h1 id="section-about-title" class="section-about-title section-title">Front-end North 2016</h1>
-                    <p class="strapline">A full-day, not-for-profit conference for <a href="#">front-end developers</a>, designers and people who make things for the web taking place on <strong>September 30th, 2016</strong> at Sheffield City Hall.</p>
-                    <p>Returning from a year's hiatus after our successful debut in 2014 we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p>
+                    <div class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></div>
+                    <h1 id="section-about-title" class="section-about-title section-title">Front-end North <span aria-hidden="true">2016</span><span class="sr-only">twenty sixteen</span></h1>
+                    <p class="strapline">A full-day, not-for-profit conference for front-end developers, designers and people who make things for the web taking place on <strong>September <span aria-hidden="true">30th, 2016</span><span class="sr-only">thirtieth twenty sixteen</span></strong> at Sheffield City Hall.</p>
+                    <p>Returning from a year's hiatus after our successful debut in <span aria-hidden="true">2014</span><span class="sr-only">twenty fourteen</span> we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p>
                     <a href="#section-tickets" class="cta button">Get Your Ticket(s)</a>
                     <p class="read-on">Or read on to find out more...</p>
-                    <svg class="hand-down" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 1792 1792">
+                    <svg class="hand-down" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 1792 1792">
                         <path d="M1536 960q0-84-32-183t-64-194-32-167v-32H768v32q0 35-12 67.5T719 546t-46 50-54 49q-9 8-14 12-81 72-145 112-22 14-68 38-3 1-22.5 10.5t-36 18.5-35.5 20-30.5 21.5T256 896q0 71 30.5 115.5T384 1056q43 0 84.5-15t68-33 55-33 48.5-15v576q0 50 38.5 89t89.5 39q52 0 90-38t38-90v-331q46 35 103 35 69 0 119-53 32 18 69 18t73.5-17.5 52.5-47.5q24 4 56 4 85 0 126-48.5t41-135.5zm-128-768q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm256 764q0 142-77.5 230t-217.5 87l-5-1q-76 61-178 61-22 0-43-3-54 30-119 37v169q0 105-76 180.5T767 1792q-103 0-179-76t-76-180v-374q-54 22-128 22-121 0-188.5-81.5T128 896q0-38 17.5-69.5t49.5-55 63-40.5 72-37 62-33q55-35 129-100 3-2 17-14t21.5-19 21.5-20.5 22.5-24 18-22.5 14-23.5T640 416V128q0-53 37.5-90.5T768 0h640q53 0 90.5 37.5T1536 128v288q0 59 59 223 69 190 69 317z" />
                     </svg>
                 </div>
@@ -72,7 +75,7 @@
             <!-- Section: Speakers -->
             <div id="section-speakers" class="section-speakers-wrapper section-wrapper">
                 <section class="section-speakers-content section-content" aria-labelledby="section-speakers-title">
-                    <h2 id="section-speakers-title" class="section-speakers-title section-title">Our Speaker Line-up for 2016</h2>
+                    <h2 id="section-speakers-title" class="section-speakers-title section-title">Our Speaker Line-up for <span aria-hidden="true">2016</span><span class="sr-only">twenty sixteen</span></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Mauris mattis suscipit pretium. Vestibulum porta est vel viverra condimentum. </p>
                     <p>Hover over or tap on a speaker's avatar for their bio.</p>
                     <h3 class="speakers-headline-title">Headline Speakers</h3>
@@ -208,7 +211,7 @@
                         <!-- Doors Open -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>09:00am</p>
+                                <p>9am</p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Doors open for <strong>registration</strong> and refeshments.</p>
@@ -217,7 +220,7 @@
                         <!-- Opening Remarks -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>09:45am - 10:00am</p>
+                                <p><span aria-hidden="true">9:45am - 10am</span><span class="sr-only">Nine Forty Five until Ten</p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Front-end North 2016 begins with <strong>opening remarks</strong> and details of our fantastic <strong>competition prizes</strong>.</p>
@@ -226,7 +229,7 @@
                         <!-- Lightning Talks -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>10:00am - 10:40am</p>
+                                <p><span class="aria-hidden">10am - 10:40am</span><span class="sr-only">Ten until Ten Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Lightning Talks</h3>
@@ -247,7 +250,7 @@
                         <!-- Talk 1 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>10:40am - 11:20am</p>
+                                <p><span aria-hidden="true">10:40am - 11:20am</span><span class="sr-only">Ten Forty until Eleven Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -257,7 +260,7 @@
                         <!-- Mid-morning Break -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>11:20am - 11:40am</p>
+                                <p><span aria-hidden="true">11:20am - 11:40am</span><span class="sr-only">Eleven Twenty until Eleven Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Mid-morning <strong>break</strong> with refreshments.</p>
@@ -266,7 +269,7 @@
                         <!-- Talk 2 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>11:40am - 12:20pm</p>
+                                <p><span aria-hidden="true">11:40am - 12:20pm</span><span class="sr-only">Eleven Forty until Twelve Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -276,7 +279,7 @@
                         <!-- Talk 3 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>12:20pm - 13:00pm</p>
+                                <p><span aria-hidden="true">12:20pm - 1pm</span><span class="sr-only">Twelve Twenty until One O'Clock</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -286,7 +289,7 @@
                         <!-- Lunch-->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>13:00pm - 14:00pm</p>
+                                <p><span aria-hidden="true">1pm - 2pm</span><span class="sr-only">One O'Clock until Two O'Clock</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Time for <strong>lunch</strong> in the North Hall, adjacent to the Ballroom.</p>
@@ -295,7 +298,7 @@
                         <!-- Talk 4 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>14:00pm - 14:40pm</p>
+                                <p><span aria-hidden="true">2pm - 2.40pm</span><span class="sr-only">Two O'Clock until Two Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -305,7 +308,7 @@
                         <!-- Talk 5 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>14:40pm - 15:20pm</p>
+                                <p><span aria-hidden="true">14:40pm - 15:20pm</span><span class="sr-only">Two Forty until Three Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -315,7 +318,7 @@
                         <!-- Mid-afternoon Break -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>15:20pm - 15:40pm</p>
+                                <p><span aria-hidden="true">15:20pm - 15:40pm</span><span class="sr-only">Three Twenty until Three Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Mid-afternoon <strong>break</strong> with refreshments.</p>
@@ -324,7 +327,7 @@
                         <!-- Talk 6 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>15:40pm - 16:20pm</p>
+                                <p><span aria-hidden="true">15:40pm - 16:20pm</span><span class="sr-only">Three Forty until Four Twenty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -334,7 +337,7 @@
                         <!-- Talk 7 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>16:20pm - 17:00pm</p>
+                                <p><span aria-hidden="true">16:20pm - 17:00pm</span><span class="sr-only">Four Twenty until Five O'Clock</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -344,7 +347,7 @@
                         <!-- Talk 8 -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>17:00pm - 17:40pm</p>
+                                <p><span aria-hidden="true">17:00pm - 17:40pm</span><span class="sr-only">Five O'Clock until Five Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
@@ -354,7 +357,7 @@
                         <!-- Closing Remarks -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>5:40pm - 6:00pm</p>
+                                <p><span aria-hidden="true">5:40pm - 6:00pm</span><span class="sr-only">Five Forty until Six O'Clock</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p>Closing remarks and announcement of the <strong>competition winners</strong>!</p>
@@ -363,7 +366,7 @@
                         <!-- The Social -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
-                                <p>6:00pm - 9:30pm</p>
+                                <p><span aria-hidden="true">6:00pm - 9:30pm</span><span class="sr-only">6 O'Clock until Nine Thirty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <p><strong>The Social</strong> begins as Front-end North 2016 comes to an end.</p>
@@ -384,7 +387,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur ut sollicitudin nunc.</p>
                     <p>Mauris mattis suscipit pretium. Vestibulum porta est vel viverra condimentum. Aenean ut urna at tellus cursus mollis. Etiam neque ligula, gravida a nisi id, cursus consequat erat.</p>
                     <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-                    <div class='map'>
+                    <div class='map' aria-hidden="true">
                         <div id='gmap_canvas' style='height:500px;width:1920px; max-width: 100%;'></div>
                         <div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div>
                         <div><small><a href="https://termsandcondiitionssample.com">terms and conditions generator</a></small></div>
@@ -440,31 +443,31 @@
                     <div class="row benefits">
                         <div class="col sm3 benefit">
                             <h3 class="benefit-title">Competition <br/> Prizes to Win</h3>
-                            <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 1792 1792">
+                            <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M1056 1356V640H736v716q0 25 18 38.5t46 13.5h192q28 0 46-13.5t18-38.5zM600 512h195L669 351q-26-31-69-31-40 0-68 28t-28 68 28 68 68 28zm688-96q0-40-28-68t-68-28q-43 0-69 31L998 512h194q40 0 68-28t28-68zm376 256v320q0 14-9 23t-23 9h-96v416q0 40-28 68t-68 28H352q-40 0-68-28t-28-68v-416h-96q-14 0-23-9t-9-23V672q0-14 9-23t23-9h440q-93 0-158.5-65.5T376 416t65.5-158.5T600 192q107 0 168 77l128 165 128-165q61-77 168-77 93 0 158.5 65.5T1416 416t-65.5 158.5T1192 640h440q14 0 23 9t9 23z" />
                             </svg>
-                            <p class="benefit-description">Enter our competitions for a chance to win one of our great (and useful) prizes.</p>
+                            <p class="benefit-description">Enter our competitions for a chance to win one of our great (and useful) prizes. <strong>#swag</strong></p>
                         </div>
                         <div class="col sm3 benefit">
                             <h3 class="benefit-title">Find or List <br/> Opportunities</h3>
-                            <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 1792 1792">
+                            <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M529 896q-162 5-265 128H130q-82 0-138-40.5T-64 865q0-353 124-353 6 0 43.5 21t97.5 42.5T320 597q67 0 133-23-5 37-5 66 0 139 81 256zm1071 637q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1533q0-53 3.5-103.5t14-109T236 1212t43-97.5 62-81 85.5-53.5T538 960q10 0 43 21.5t73 48 107 48 135 21.5 135-21.5 107-48 73-48 43-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zM576 256q0 106-75 181t-181 75-181-75-75-181 75-181T320 0t181 75 75 181zm704 384q0 159-112.5 271.5T896 1024 624.5 911.5 512 640t112.5-271.5T896 256t271.5 112.5T1280 640zm576 225q0 78-56 118.5t-138 40.5h-134q-103-123-265-128 81-117 81-256 0-29-5-66 66 23 133 23 59 0 119-21.5t97.5-42.5 43.5-21q124 0 124 353zm-128-609q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181z" />
                             </svg>
-                            <p class="benefit-description">Use our career boards if you have a vacancy in your team, or need a new challenge.</p>
+                            <p class="benefit-description">Use our career boards if you have a vacancy in your dev team, or need a new challenge.</p>
                         </div>
                         <div class="col sm3 benefit">
                             <h3 class="benefit-title">Discount <br/> Car Parking</h3>
-                            <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 1792 1792">
+                            <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M352 1088q0-66-47-113t-113-47-113 47-47 113 47 113 113 47 113-47 47-113zm36-320h1016l-89-357q-2-8-14-17.5t-21-9.5H512q-9 0-21 9.5T477 411zm1372 320q0-66-47-113t-113-47-113 47-47 113 47 113 113 47 113-47 47-113zm160-96v384q0 14-9 23t-23 9h-96v128q0 80-56 136t-136 56-136-56-56-136v-128H384v128q0 80-56 136t-136 56-136-56-56-136v-128h-96q-14 0-23-9t-9-23V992q0-93 65.5-158.5T96 768h28l105-419q23-94 104-157.5T512 128h768q98 0 179 63.5T1563 349l105 419h28q93 0 158.5 65.5T1920 992z" />
                             </svg>
-                            <p class="benefit-description">Park your car at the Q-Park adjacent to the venue for just <strong>£3.50</strong> for the whole day.</p>
+                            <p class="benefit-description">Park your car/unicorn at the Q-Park adjacent to the venue for just <strong aria-hidden="true">£3.50</strong><span class="sr-only">Three Pounds Fifty</span> for the whole day.</p>
                         </div>
                         <div class="col sm3 benefit">
                             <h3 class="benefit-title">Discount <br/> Hotel Rooms</h3>
-                            <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 1792 1792">
+                            <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                                 <path d="M128 1024h1728q26 0 45 19t19 45v448h-256v-256H128v256h-256V320q0-26 19-45t45-19H64q26 0 45 19t19 45v704zm576-320q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm1216 256v-64q0-159-112.5-271.5T1536 512H832q-26 0-45 19t-19 45v384h1152z" />
                             </svg>
-                            <p class="benefit-description">Receive <strong>10%</strong> off when you book a room with one of our selected hotel partners.</p>
+                            <p class="benefit-description">Receive <strong><span aria-hidden="true">10</span><span class="sr-only">Ten</span>%</strong> off when you book a room with one of our selected hotel partners.</p>
                         </div>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.</p>
@@ -479,20 +482,20 @@
                         <div class="row">
                             <div class="col sm4 ticket">
                                 <h3 class="ticket-type">Early Bird</h3>
-                                <div class="ticket-price">£85.00 <sup>+VAT</sup></div>
+                                <div class="ticket-price"><span aria-hidden="true">£85.00</span><span class="sr-only">Eighty Five Ppounds</span> <sup>+VAT</sup></div>
                                 <p class="ticket-description">A limited number of early bird tickets are on sale now.</p>
                                 <a class="ticket-cta button cta" href="#">Buy Now</a>
                             </div>
                             <div class="col sm4 ticket">
-                                <h3 class="ticket-type">Student</h3>
-                                <div class="ticket-price">£45.00 <sup>+VAT</sup></div>
+                                <h3 class="ticket-type">Students</h3>
+                                <div class="ticket-price"><span aria-hidden="true">£45.00</span><span class="sr-only">Forty Five Pounds</span> <sup>+VAT</sup></div>
                                 <p class="ticket-description">A limited number of tickets for those with a valid NUS ID.</p>
                                 <a class="ticket-cta button cta" href="#">Buy Now</a>
                             </div>
                             <div class="col sm4 ticket">
-                                <h3 class="ticket-type">Standard</h3>
-                                <div class="ticket-price">£120.00 <sup>+VAT</sup></div>
-                                <p class="ticket-description">The standard delegate rate for Front-end North 2016.</p>
+                                <h3 class="ticket-type">Delegates</h3>
+                                <div class="ticket-price"><span aria-hidden="true">£120.00</span><span class="sr-only">One Hundred and Twenty Pounds</span> <sup>+VAT</sup></div>
+                                <p class="ticket-description">The standard full-price rate for Front-end North 2016.</p>
                                 <div class="ticket-cta button cta disabled">Coming soon...</div>
                             </div>
                         </div>
@@ -503,9 +506,8 @@
             <!-- Section: Sponsors -->
             <div id="section-sponsors" class="section-sponsors-wrapper section-wrapper">
                 <section class="section-sponsors-content section-content" aria-labelledby="section-sponsors-title">
-                    <!-- Change to Sponsors once all the slots have been filled! -->
                     <h2 id="section-sponsors-title" class="section-sponsors-title section-title">Our Amazing Sponsors</h2>
-                    <p>We're looking for awesome sponsors to help make Front-end North 2016 a success. Get in touch via the link below for sponsorship details.</p>
+                    <p>We're looking for sponsors to help make Front-end North 2016 a success. For sponsorship details, get in touch with the organising team via the link below.</p>
                     <a class="sponsors-email button cta" href="mailto:sponsors@frontendnorth.com">Sponsor Front-end North</a>
                     <p>We know it's so <em>cliché</em> but it is really is true: we couldn't put this event on without the help of our sponsors:</p>
                     <div class="sponsors">
@@ -604,7 +606,7 @@
                     <ul class="social-media">
                         <li>
                             <a href="https://twitter.com/frontendnorth" title="Follow FEN on Twitter">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
                                     <path d="M1408 610q-56 25-121 34 68-40 93-117-65 38-134 51-61-66-153-66-87 0-148.5 61.5T883 722q0 29 5 48-129-7-242-65T454 550q-29 50-29 106 0 114 91 175-47-1-100-26v2q0 75 50 133.5t123 72.5q-29 8-51 8-13 0-39-4 21 63 74.5 104t121.5 42q-116 90-261 90-26 0-50-3 148 94 322 94 112 0 210-35.5t168-95 120.5-137 75-162T1304 746q0-18-1-27 63-45 105-109zm256-194v960q0 119-84.5 203.5T1376 1664H416q-119 0-203.5-84.5T128 1376V416q0-119 84.5-203.5T416 128h960q119 0 203.5 84.5T1664 416z" />
                                 </svg>
                                 <span class="sr-only">Twitter</span>
@@ -612,7 +614,7 @@
                         </li>
                         <li>
                             <a href="https://instagram.com/frontendnorth" title="Follow FEN on Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
                                     <path d="M1490 1426V778h-135q20 63 20 131 0 126-64 232.5T1137 1310t-240 62q-197 0-337-135.5T420 909q0-68 20-131H299v648q0 26 17.5 43.5T360 1487h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5T897 594q-127 0-217.5 87.5T589 893t90.5 211.5T897 1192q128 0 218.5-87.5T1206 893zm284-360V368q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58H325q-81 0-139-58t-58-139V325q0-81 58-139t139-58h1142q81 0 139 58t58 139z" />
                                 </svg>
                                 <span class="sr-only">Instagram</span>
@@ -620,7 +622,7 @@
                         </li>
                         <li>
                             <a href="https://facebook.com/frontendnorth" title="Follow FEN on Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
                                     <path d="M1376 128q119 0 203.5 84.5T1664 416v960q0 119-84.5 203.5T1376 1664h-188v-595h199l30-232h-229V689q0-56 23.5-84t91.5-28l122-1V369q-63-9-178-9-136 0-217.5 80T948 666v171H748v232h200v595H416q-119 0-203.5-84.5T128 1376V416q0-119 84.5-203.5T416 128h960z" />
                                 </svg>
                                 <span class="sr-only">Facebook</span>
@@ -628,7 +630,7 @@
                         </li>
                         <li>
                             <a href="mailto:events@frontendnorth.com" title="Send us an Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewbox="0 0 1792 1792">
                                     <path d="M1376 128q119 0 203.5 84.5T1664 416v960q0 119-84.5 203.5T1376 1664H416q-119 0-203.5-84.5T128 1376V416q0-119 84.5-203.5T416 128h960zm32 1056V748q-31 35-64 55-34 22-132.5 85T1060 987q-98 69-164 69t-164-69q-46-32-141.5-92.5T448 802q-12-8-33-27t-31-27v436q0 40 28 68t68 28h832q40 0 68-28t28-68zm0-573q0-41-27.5-70t-68.5-29H480q-40 0-68 28t-28 68q0 37 30.5 76.5T482 749q47 32 137.5 89T749 921q3 2 17 11.5t21 14 21 13 23.5 13T853 982t22.5 7.5T896 992t20.5-2.5T939 982t21.5-9.5 23.5-13 21-13 21-14 17-11.5l267-174q35-23 66.5-62.5T1408 611z" />
                                 </svg>
                                 <span class="sr-only">Email</span>
@@ -639,7 +641,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p>&copy; <span>Front-end North 2016</span> - A non-profit event organised by <a href="http://www.makedo.net">Make Do</a>.</p>
+                    <p><span class="aria-hidden">&copy;</span><span class="sr-only">Copyright</span> <span>Front-end North 2016</span> - A non-profit event organised by <a href="http://www.makedo.net">Make Do</a>.</p>
                     <p>Venue images used with permission from <a href="http://www.sheffieldcityhall.co.uk" rel="nofollow">Sheffield City Hall</a>. SVG icons courtesy of <a href="https://github.com/encharm/Font-Awesome-SVG-PNG">Font Awesome</a>.</p>
                 </div>
             </div>
