@@ -165,6 +165,8 @@ button {
 
 // Sections
 .section-wrapper {
+	border-bottom: 2px solid $colour--blue-dark;
+	border-top: 2px solid $colour--blue-dark;
 	position: relative;
 
 	// &:after {
@@ -234,6 +236,10 @@ button {
 }
 
 // Section - About
+.section-about-wrapper {
+	border: 0;
+}
+
 .section-about-content {
 	padding-bottom: 0;
 }
@@ -251,6 +257,28 @@ button {
 }
 
 // Section - Speakers
+.section-speakers-wrapper {
+	border-top: 0;
+}
+
+.speakers-headline-title,
+.speakers-lightning-title {
+	@include narrow;
+	letter-spacing: 3px;
+	margin-bottom: rem(20px);
+	margin-top: rem(50px);
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.speakers-headline-title {
+	font-size: rem(32px);
+}
+
+.speakers-lightning-title {
+	font-size: rem(28px);
+}
+
 .speakers {
 	margin-top: rem(36px);
 }
@@ -458,6 +486,7 @@ button {
 
 	sup {
 		font-size: rem(16px);
+		left: -0.5em;
 		top: -1.25em;
 	}
 }
