@@ -406,7 +406,8 @@
                         var myOptions = {
                             zoom: 15,
                             center: new google.maps.LatLng(53.3806411, -1.4709086000000298),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            scrollwheel: false
                         };
                         map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
                         marker = new google.maps.Marker({
