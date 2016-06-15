@@ -216,8 +216,20 @@ button {
 		}
 	}
 
+	.col p {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	p a {
 		color: $colour--yellow;
+
+		@include on-event {
+			color: $colour--blue-light;
+		}
 
 		.white & {
 			color: $colour--blue;
@@ -325,6 +337,10 @@ button {
 	span {
 		display: block;
 	}
+}
+
+.speaker-title {
+	color: $colour--blue-light;
 }
 
 .speaker-title,
@@ -440,6 +456,7 @@ button {
 
 .benefit-icon {
 	display: block;
+	fill: $colour--white;
 	margin: 0 auto;
 }
 
@@ -455,10 +472,6 @@ button {
 
 .benefit-description {
 	font-size: rem(18px);
-}
-
-.benefit-icon {
-	fill: $colour--white;
 }
 
 // Section - Tickets
