@@ -75,6 +75,7 @@ img {
 
 	a {
 		color: $colour--yellow;
+		letter-spacing: 0.5px;
 		line-height: 1.5;
 		text-decoration: none;
 
@@ -360,6 +361,10 @@ button {
 			border-bottom: 0;
 		}
 	}
+
+	p {
+		padding: 0;
+	}
 }
 
 .schedule-time,
@@ -373,6 +378,7 @@ button {
 
 .schedule-time {
 	font-style: italic;
+	padding-right: 0;
 
 	p {
 		font-weight: 400;
