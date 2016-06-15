@@ -300,6 +300,7 @@ button {
 }
 
 .speaker {
+	border-radius: rem(15px);
 	cursor: pointer;
 	margin: rem(10px) 0;
 	overflow: hidden;
@@ -420,10 +421,16 @@ button {
 }
 
 .map {
-	height: 500px;
+	height: reme(500px);
 	margin-bottom: rem(50px);
 	margin-top: rem(50px);
 	overflow: hidden;
+	width: 100%;
+}
+
+#gmap_canvas {
+	height: rem(500px);
+	max-width: 100%;
 	width: 100%;
 }
 
@@ -448,6 +455,7 @@ button {
 
 .benefit {
 	background-color: $colour--blue-dark;
+	border-radius: rem(15px);
 	padding: rem(20px);
 }
 
@@ -535,6 +543,7 @@ button {
 }
 
 .sponsor-logo {
+	border-radius: rem(15px);
 	margin: rem(10px);
 }
 
