@@ -48,6 +48,14 @@ img {
 	vertical-align: middle;
 }
 
+a:link {
+	color: $colour--yellow;
+
+	@include on-event {
+		color: $colour--blue-light;
+	}
+}
+
 // Navigation
 .navigation-wrapper {
 	background-color: $colour--blue-dark;
@@ -300,7 +308,7 @@ header {
 	letter-spacing: 1.5px;
 	margin-top: 0;
 	text-align: center;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 
 	@include mq(sm) {
 		font-size: rem(36px);
@@ -781,3 +789,10 @@ footer {
 		}
 	}
 }
+
+// components
+
+.text-center {
+	text-align: center;
+}
+
