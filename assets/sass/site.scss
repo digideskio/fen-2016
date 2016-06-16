@@ -284,6 +284,13 @@ header {
 			}
 		}
 	}
+
+	> h3 {
+		@include narrow;
+		font-size: rem(32px);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
 }
 
 .section-title {
