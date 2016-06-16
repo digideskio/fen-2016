@@ -19,10 +19,10 @@
     <!-- 2. Implement responsive images -->
     <!-- 2. Build the mobile menu -->
     <!-- 3. Add microformats where possible. -->
-    <!-- 4. Colour contrast checks -->
-    <!-- 5. Colour blindness checks -->
+    <!-- 4. Colour contrast & blindness checks -->
+    <!-- 5. no-js love -->
+    <!-- 6. Cross browser love -->
     <a class="sr-only" href="#section-about">Skip to main content</a>
-    <header>
     <div class="navigation-wrapper">
         <nav id="navigation" class="navigation primary">
             <div class="col">
@@ -59,20 +59,21 @@
             </div>
         </nav>
     </div>
-    <h1 class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></h1>
+    <header>
+        <img src="img/code.jpg" alt="HTML code" />
+        <h1 class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></h1>
     </header>
     <main>
         <article>
             <!-- Section: About -->
             <div id="section-about" class="section-about-wrapper section-wrapper">
-                <div class="section-about-content section-content no-padding" aria-labelledby="section-about-title">
-
+                <div class="section-about-content section-content" aria-labelledby="section-about-title">
                     <h1 id="section-about-title" class="section-about-title section-title">Front-end North <span aria-hidden="true">2016</span><span class="sr-only">twenty sixteen</span></h1>
                     <p class="strapline">A full-day, not-for-profit conference for front-end developers, designers and people who make things for the web taking place on <strong>September <span aria-hidden="true">30th, 2016</span><span class="sr-only">thirtieth twenty sixteen</span></strong> at Sheffield City Hall.</p>
                     <p>Returning from a year's hiatus after our successful debut in <span aria-hidden="true">2014</span><span class="sr-only">twenty fourteen</span> we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p>
                     <a href="#section-tickets" class="cta button">Get Your Ticket(s)</a>
                     <p class="read-on">Or read on to find out more...</p>
-                    <svg class="hand-down" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 1792 1792">
+                    <svg class="hand-down" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 1792 1792">
                         <path d="M1536 960q0-84-32-183t-64-194-32-167v-32H768v32q0 35-12 67.5T719 546t-46 50-54 49q-9 8-14 12-81 72-145 112-22 14-68 38-3 1-22.5 10.5t-36 18.5-35.5 20-30.5 21.5T256 896q0 71 30.5 115.5T384 1056q43 0 84.5-15t68-33 55-33 48.5-15v576q0 50 38.5 89t89.5 39q52 0 90-38t38-90v-331q46 35 103 35 69 0 119-53 32 18 69 18t73.5-17.5 52.5-47.5q24 4 56 4 85 0 126-48.5t41-135.5zm-128-768q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm256 764q0 142-77.5 230t-217.5 87l-5-1q-76 61-178 61-22 0-43-3-54 30-119 37v169q0 105-76 180.5T767 1792q-103 0-179-76t-76-180v-374q-54 22-128 22-121 0-188.5-81.5T128 896q0-38 17.5-69.5t49.5-55 63-40.5 72-37 62-33q55-35 129-100 3-2 17-14t21.5-19 21.5-20.5 22.5-24 18-22.5 14-23.5T640 416V128q0-53 37.5-90.5T768 0h640q53 0 90.5 37.5T1536 128v288q0 59 59 223 69 190 69 317z" />
                     </svg>
                 </div>
@@ -89,7 +90,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="Harry Roberts" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Harry <span>Roberts</span></h3>
+                                <h4 class="speaker-name">Harry <span>Roberts</span></h4>
                                 <p class="speaker-title">Consultant
                                     <br/> Front-end Architect</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/csswizardry" target="_blank" rel="nofollow">@csswizardry</a></p>
@@ -99,7 +100,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="Lea Verou" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Lea <span>Verou</span></h3>
+                                <h4 class="speaker-name">Lea <span>Verou</span></h4>
                                 <p class="speaker-title">Front-end Developer
                                     <br/> and Author</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/leaverou" target="_blank" rel="nofollow">@LeaVerou</a></p>
@@ -109,7 +110,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="Stu Robson" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Stu <span>Robson</span></h3>
+                                <h4 class="speaker-name">Stu <span>Robson</span></h4>
                                 <p class="speaker-title">Front-end Developer
                                     <br/> and Author</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/sturobson" target="_blank" rel="nofollow">@StuRobson</a></p>
@@ -119,7 +120,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="Tammie Lister" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Tammie <span>Lister</span></h3>
+                                <h4 class="speaker-name">Tammie <span>Lister</span></h4>
                                 <p class="speaker-title">Theme Wrangler
                                     <br/> at Automattic</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/karmatosed" target="_blank" rel="nofollow">@karmatosed</a></p>
@@ -131,7 +132,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="Robin Whittleton" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Robin <span>Whittleton</span></h3>
+                                <h4 class="speaker-name">Robin <span>Whittleton</span></h4>
                                 <p class="speaker-title">Head of Front-end
                                     <br/> for GDS Team</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/robinwhittleton" target="_blank" rel="nofollow">@robinwhittleton</a></p>
@@ -141,7 +142,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">Chris <span>Hutchinson</span></h3>
+                                <h4 class="speaker-name">Chris <span>Hutchinson</span></h4>
                                 <p class="speaker-title">Newsroom Developer at
                                     <br/> The Times/Sunday Times</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/chrishutchinson" target="_blank" rel="nofollow">@chrishutchinson</a></p>
@@ -151,7 +152,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -160,7 +161,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -172,7 +173,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -181,7 +182,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -190,7 +191,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -199,7 +200,7 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h3 class="speaker-name">TBC <span>Speaker</span></h3>
+                                <h4 class="speaker-name">TBC <span>Speaker</span></h4>
                                 <p class="speaker-title">Something something coming soon...</p>
                                 <p class="speaker-twitter"><a href="https://twitter.com/comingsoon" target="_blank" rel="nofollow">@comingsoon</a></p>
                             </div>
@@ -226,15 +227,15 @@
                         <div class="row">
                             <div class="col sm3 schedule-time">
                                 <p><span aria-hidden="true">9:45am - 10am</span><span class="sr-only">Nine Forty Five until Ten</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <p>Front-end North 2016 begins with <strong>opening remarks</strong> and details of our fantastic <strong>competition prizes</strong>.</p>
-                            </div>
-                        </div>
-                        <!-- Lightning Talks -->
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p><span class="aria-hidden">10am - 10:40am</span><span class="sr-only">Ten until Ten Forty</span></p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<p>Front-end North 2016 begins with <strong>opening remarks</strong> and details of our fantastic <strong>competition prizes</strong>.</p>
+							</div>
+						</div>
+						<!-- Lightning Talks -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p><span class="aria-hidden">10am - 10:40am</span><span class="sr-only">Ten until Ten Forty</span></p>
                             </div>
                             <div class="col sm9 schedule-description">
                                 <h3 class="schedule-talk-title">Lightning Talks</h3>
@@ -513,7 +514,7 @@
                     <h2 id="section-sponsors-title" class="section-sponsors-title section-title">Our Amazing Sponsors</h2>
                     <p>We're looking for sponsors to help make Front-end North 2016 a success. For sponsorship details, get in touch with the organising team via the link below.</p>
                     <a class="sponsors-email button cta" href="mailto:sponsors@frontendnorth.com">Sponsor Front-end North</a>
-                    <p>We know it's so <em>cliché</em> but it is really is true: we couldn't put this event on without the help of our sponsors:</p>
+                    <p>We know that it's such a <em>cliché</em> but it really is true: we couldn't put this event on without the help of our sponsors:</p>
                     <div class="sponsors">
                         <h3 class="sponsor-tier-name steel">Steel Sponsors</h3>
                         <!-- Steel Sponsors -->
@@ -646,7 +647,8 @@
             <div class="row">
                 <div class="col">
                     <p><span class="aria-hidden">&copy;</span><span class="sr-only">Copyright</span> <span>Front-end North 2016</span> - A non-profit event organised by <a href="http://www.makedo.net">Make Do</a>.</p>
-                    <p>Venue images used with permission from <a href="http://www.sheffieldcityhall.co.uk" rel="nofollow">Sheffield City Hall</a>. SVG icons courtesy of <a href="https://github.com/encharm/Font-Awesome-SVG-PNG">Font Awesome</a>.</p>
+                    <p>Venue images used with permission from <a href="http://www.sheffieldcityhall.co.uk" rel="nofollow">Sheffield City Hall</a>.</p>
+                    <p>Other images courtesy of <a href="http://www.unsplash.com" rel="nofollow">Unsplash</a>. SVG icons courtesy of <a href="https://github.com/encharm/Font-Awesome-SVG-PNG" rel="nofollow">Font Awesome</a>.</p>
                 </div>
             </div>
         </footer>

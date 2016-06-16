@@ -21,11 +21,12 @@ p {
 	font-size: rem(20px);
 	font-weight: 200;
 	letter-spacing: 0.5px;
-	line-height: 1.5;
+	line-height: 1.4;
 	margin-bottom: rem(24px);
 
 	@include mq(xs) {
 		font-size: rem(24px);
+		line-height: 1.5;
 	}
 
 	&:last-child {
@@ -171,9 +172,13 @@ button {
 		font-weight: 700;
 		margin-bottom: rem(30px);
 		margin-top: rem(30px);
-		max-width: rem(500px);
+		max-width: 93%;
 		padding: rem(15px);
 		transition: none;
+
+		@include mq(sm) {
+			max-width: rem(500px);
+		}
 
 		@include mq(sm) {
 			margin-bottom: rem(50px);
@@ -192,16 +197,25 @@ button {
 	}
 }
 
-// Intro
+// Header
+header {
+	border-bottom: 8px solid $colour--blue-dark;
+	margin-top: rem(64px);
+	position: relative;
+}
+
 .logo {
 	@include narrow;
 	color: $colour--blue-light;
 	font-size: rem(102px);
 	font-weight: 200;
-	margin-bottom: rem(50px);
-	margin-top: rem(114px);
+	left: 50%;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	text-align: center;
-	text-shadow: 3px 3px 5px $colour--blue-dark;
+	text-shadow: 3px 3px 5px rgba(black, 0.3);
 
 	@include mq(xs) {
 		font-size: rem(156px);
@@ -295,6 +309,10 @@ button {
 }
 
 // Section - About
+.section-about-content {
+	padding-bottom: 0;
+}
+
 .section-about-wrapper {
 	border: 0;
 }
@@ -305,10 +323,10 @@ button {
 
 .hand-down {
 	display: block;
-	fill: $colour--white;
-	height: rem(48px);
-	margin: rem(50px) auto 0 auto;
-	width: rem(48px);
+	fill: $colour--blue-light;
+	height: rem(64px);
+	margin: rem(50px) auto 0;
+	width: rem(64px);
 }
 
 // Section - Speakers
@@ -359,6 +377,7 @@ button {
 	height: 100%;
 	left: 0;
 	margin: auto;
+	max-width: rem(256px);
 	padding: rem(36px) rem(10px) rem(10px);
 	position: absolute;
 	right: 0;
@@ -664,7 +683,7 @@ button {
 
 .sponsor-logo {
 	border-radius: rem(15px);
-	margin: rem(10px);
+	padding: rem(10px);
 }
 
 .sponsor-tier-name {
@@ -704,6 +723,10 @@ footer {
 		color: $colour--yellow;
 		font-weight: 400;
 		text-decoration: none;
+
+		@include on-event {
+			color: $colour--blue-light;
+		}
 	}
 
 	p {
