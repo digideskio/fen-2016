@@ -157,6 +157,7 @@ button {
 
 	&:hover {
 		box-shadow: 0 4px $colour--sand;
+		color: $colour--blue-dark !important; // hack 
 		top: 2px;
 	}
 
@@ -455,6 +456,9 @@ header {
 		&:last-child {
 			border-bottom: 0;
 		}
+	}
+	.row.wip {
+		background-color: #eee;
 	}
 
 	p {
