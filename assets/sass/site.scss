@@ -18,14 +18,14 @@ body {
 }
 
 p {
-	font-size: rem(14px);
+	font-size: rem(16px);
 	font-weight: 200;
 	letter-spacing: 0.5px;
 	line-height: 1.4;
 	margin-bottom: rem(22px);
 
 	@include mq(xs) {
-		font-size: rem(18px);
+		font-size: rem(20px);
 		line-height: 1.5;
 	}
 
@@ -35,10 +35,11 @@ p {
 
 	&.smaller {
 		font-size: rem(10px);
+
 		@include mq(xs) {
 			font-size: rem(14px);
 			line-height: 1.2;
-		}		
+		}
 	}
 }
 
@@ -165,7 +166,7 @@ button {
 
 	&:hover {
 		box-shadow: 0 4px $colour--sand;
-		color: $colour--blue-dark !important; // hack 
+		color: $colour--blue-dark !important; // hack
 		top: 2px;
 	}
 
@@ -306,7 +307,6 @@ header {
 		@include narrow;
 		font-size: rem(32px);
 		letter-spacing: 1px;
-		text-transform: uppercase;
 	}
 }
 
@@ -333,24 +333,17 @@ header {
 }
 
 // Section - About
+.strapline {
+	@include narrow;
+	font-size: rem(22px);
+}
+
 .section-about-content {
 	padding-bottom: 0;
 }
 
 .section-about-wrapper {
 	border: 0;
-}
-
-.read-on {
-	text-align: center;
-}
-
-.hand-down {
-	display: block;
-	fill: $colour--blue-light;
-	height: rem(64px);
-	margin: rem(50px) auto 0;
-	width: rem(64px);
 }
 
 // Section - Speakers
@@ -378,6 +371,11 @@ header {
 
 .speakers {
 	margin-top: rem(36px);
+
+	& + & {
+		margin-bottom: rem(36px);
+		margin-top: 0;
+	}
 }
 
 .speaker {
@@ -465,6 +463,7 @@ header {
 			border-bottom: 0;
 		}
 	}
+
 	.row.wip {
 		background-color: #eee;
 	}
@@ -647,7 +646,7 @@ header {
 	padding-top: rem(30px);
 	padding-bottom: rem(30px);
 	padding-left: rem(20px);
-	padding-right: rem(20px);	
+	padding-right: rem(20px);
 	text-align: center;
 
 	&:first-child {
@@ -810,4 +809,3 @@ footer {
 .text-center {
 	text-align: center;
 }
-
