@@ -644,7 +644,10 @@ header {
 	border-radius: rem(4px);
 	color: $colour--white;
 	margin-top: rem(20px);
-	padding: rem(20px);
+	padding-top: rem(30px);
+	padding-bottom: rem(30px);
+	padding-left: rem(20px);
+	padding-right: rem(20px);	
 	text-align: center;
 
 	&:first-child {
