@@ -32,6 +32,14 @@ p {
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	&.smaller {
+		font-size: rem(10px);
+		@include mq(xs) {
+			font-size: rem(14px);
+			line-height: 1.2;
+		}		
+	}
 }
 
 strong {
@@ -734,7 +742,7 @@ header {
 
 footer {
 	font-weight: 200;
-	padding-bottom: rem(20px);
+	padding-bottom: rem(40px);
 	padding-top: rem(20px);
 	text-align: center;
 
