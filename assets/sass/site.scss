@@ -122,7 +122,7 @@ a:link {
 			background-color: $colour--yellow;
 			border: 1px solid black;
 			border-bottom-width: 2px;
-			border-radius: 7.5px;
+			border-radius: rem(8px);
 			color: $colour--blue-dark;
 			font-weight: 700;
 			padding: rem(5px) rem(25px);
@@ -154,7 +154,7 @@ a:link {
 .button,
 button {
 	background-color: $colour--yellow;
-	border-radius: 10px;
+	border-radius: rem(8px);
 	box-shadow: 0 6px $colour--sand;
 	display: inline-block;
 	letter-spacing: 0.5px;
@@ -381,7 +381,7 @@ header {
 }
 
 .speaker {
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	cursor: pointer;
 	margin: rem(10px) 0;
 	overflow: hidden;
@@ -584,7 +584,7 @@ header {
 
 .benefit {
 	background-color: $colour--blue-dark;
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	margin-top: rem(20px);
 	padding: rem(20px);
 
@@ -641,7 +641,7 @@ header {
 
 .ticket {
 	background-color: $colour--blue-dark;
-	border-radius: 15px;
+	border-radius: rem(4px);
 	color: $colour--white;
 	margin-top: rem(20px);
 	padding: rem(20px);
@@ -709,7 +709,7 @@ header {
 }
 
 .sponsor-logo {
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	padding: rem(10px);
 }
 
