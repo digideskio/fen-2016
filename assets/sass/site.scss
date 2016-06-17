@@ -18,19 +18,28 @@ body {
 }
 
 p {
-	font-size: rem(20px);
+	font-size: rem(16px);
 	font-weight: 200;
 	letter-spacing: 0.5px;
 	line-height: 1.4;
-	margin-bottom: rem(24px);
+	margin-bottom: rem(22px);
 
 	@include mq(xs) {
-		font-size: rem(24px);
+		font-size: rem(20px);
 		line-height: 1.5;
 	}
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&.smaller {
+		font-size: rem(10px);
+
+		@include mq(xs) {
+			font-size: rem(14px);
+			line-height: 1.2;
+		}
 	}
 }
 
@@ -46,6 +55,14 @@ button {
 img {
 	max-width: 100%;
 	vertical-align: middle;
+}
+
+a:link {
+	color: $colour--yellow;
+
+	@include on-event {
+		color: $colour--blue-light;
+	}
 }
 
 // Navigation
@@ -106,7 +123,7 @@ img {
 			background-color: $colour--yellow;
 			border: 1px solid black;
 			border-bottom-width: 2px;
-			border-radius: 7.5px;
+			border-radius: rem(8px);
 			color: $colour--blue-dark;
 			font-weight: 700;
 			padding: rem(5px) rem(25px);
@@ -138,7 +155,7 @@ img {
 .button,
 button {
 	background-color: $colour--yellow;
-	border-radius: 10px;
+	border-radius: rem(8px);
 	box-shadow: 0 6px $colour--sand;
 	display: inline-block;
 	letter-spacing: 0.5px;
@@ -149,6 +166,7 @@ button {
 
 	&:hover {
 		box-shadow: 0 4px $colour--sand;
+		color: $colour--blue-dark !important; // hack
 		top: 2px;
 	}
 
@@ -270,7 +288,7 @@ header {
 
 	p a {
 		color: $colour--yellow;
-		font-weight: 700;
+		//font-weight: 700;
 
 		@include on-event {
 			color: $colour--blue-light;
@@ -289,7 +307,6 @@ header {
 		@include narrow;
 		font-size: rem(32px);
 		letter-spacing: 1px;
-		text-transform: uppercase;
 	}
 }
 
@@ -300,7 +317,7 @@ header {
 	letter-spacing: 1.5px;
 	margin-top: 0;
 	text-align: center;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 
 	@include mq(sm) {
 		font-size: rem(36px);
@@ -316,24 +333,17 @@ header {
 }
 
 // Section - About
+.strapline {
+	@include narrow;
+	font-size: rem(22px);
+}
+
 .section-about-content {
 	padding-bottom: 0;
 }
 
 .section-about-wrapper {
 	border: 0;
-}
-
-.read-on {
-	text-align: center;
-}
-
-.hand-down {
-	display: block;
-	fill: $colour--blue-light;
-	height: rem(64px);
-	margin: rem(50px) auto 0;
-	width: rem(64px);
 }
 
 // Section - Speakers
@@ -361,10 +371,15 @@ header {
 
 .speakers {
 	margin-top: rem(36px);
+
+	& + & {
+		margin-bottom: rem(36px);
+		margin-top: 0;
+	}
 }
 
 .speaker {
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	cursor: pointer;
 	margin: rem(10px) 0;
 	overflow: hidden;
@@ -447,6 +462,10 @@ header {
 		&:last-child {
 			border-bottom: 0;
 		}
+	}
+
+	.row.wip {
+		background-color: #eee;
 	}
 
 	p {
@@ -564,7 +583,7 @@ header {
 
 .benefit {
 	background-color: $colour--blue-dark;
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	margin-top: rem(20px);
 	padding: rem(20px);
 
@@ -621,10 +640,13 @@ header {
 
 .ticket {
 	background-color: $colour--blue-dark;
-	border-radius: 15px;
+	border-radius: rem(4px);
 	color: $colour--white;
 	margin-top: rem(20px);
-	padding: rem(20px);
+	padding-top: rem(30px);
+	padding-bottom: rem(30px);
+	padding-left: rem(20px);
+	padding-right: rem(20px);
 	text-align: center;
 
 	&:first-child {
@@ -689,7 +711,7 @@ header {
 }
 
 .sponsor-logo {
-	border-radius: rem(15px);
+	border-radius: rem(4px);
 	padding: rem(10px);
 }
 
@@ -722,7 +744,7 @@ header {
 
 footer {
 	font-weight: 200;
-	padding-bottom: rem(20px);
+	padding-bottom: rem(40px);
 	padding-top: rem(20px);
 	text-align: center;
 
@@ -780,4 +802,10 @@ footer {
 			}
 		}
 	}
+}
+
+// components
+
+.text-center {
+	text-align: center;
 }
