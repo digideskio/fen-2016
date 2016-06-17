@@ -15,6 +15,10 @@ body {
 	background-color: $colour--blue;
 	color: $colour--white;
 	font-family: "Source Sans Pro", sans-serif;
+
+	@include kp-mq(md) {
+		padding-top: rem(64px);
+	}
 }
 
 p {
@@ -218,7 +222,6 @@ button {
 // Header
 header {
 	border-bottom: 8px solid $colour--blue-dark;
-	margin-top: rem(64px);
 	position: relative;
 }
 
