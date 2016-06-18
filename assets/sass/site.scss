@@ -16,7 +16,7 @@ body {
 	color: $colour--white;
 	font-family: "Source Sans Pro", sans-serif;
 
-	@include kp-mq(md) {
+	@include mq(md) {
 		padding-top: rem(64px);
 	}
 }
@@ -690,7 +690,6 @@ header {
 
 	sup {
 		font-size: rem(16px);
-		left: -0.5em;
 		top: -1.25em;
 	}
 }
