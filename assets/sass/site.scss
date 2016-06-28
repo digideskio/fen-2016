@@ -16,7 +16,7 @@ body {
 	color: $colour--white;
 	font-family: "Source Sans Pro", sans-serif;
 
-	@include mq(md) {
+	@include mq(sm) {
 		padding-top: rem(64px);
 	}
 }
@@ -72,70 +72,151 @@ a:link {
 // Navigation
 .navigation-wrapper {
 	background-color: $colour--blue-dark;
+	display: none;
+	height: 100%;
 	left: 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 10;
+
+	@include mq(sm) {
+		display: block;
+		height: rem(64px);
+		max-height: rem(64px);
+	}
 }
 
 .navigation {
+	position: fixed;
+
+	@include mq(sm) {
+		position: relative;
+	}
+
 	ul {
 		@include reset-list(true);
 	}
 
 	li {
-		display: inline-block;
-		margin: 0 rem(10px);
+		display: block;
+		margin: 0;
+
+		@include mq(sm) {
+			display: inline-block;
+			margin: 0 rem(6px);
+		}
+
+		@include mq(md) {
+			margin: 0 rem(8px);
+		}
 
 		&:first-child {
 			margin-left: 0;
 		}
 	}
 
-	a {
+	a,
+	button {
 		letter-spacing: 0.5px;
 		line-height: 1.5;
+		font-size: rem(18px);
 		text-decoration: none;
 
 		@include on-event {
 			color: $colour--blue-light;
 		}
+
+		@include mq(sm) {
+			font-size: rem(14px);
+		}
+
+		@include mq(md) {
+			font-size: rem(16px);
+		}
 	}
 
 	&.primary {
 		@include fen-row;
-		display: none;
-		margin-bottom: rem(10px);
-		margin-top: rem(10px);
-		padding: rem(10px);
+		padding: 0;
+		text-align: center;
 		text-transform: uppercase;
 
-		@include mq(md) {
-			display: block;
+		@include mq(sm) {
+			margin-bottom: rem(10px);
+			margin-top: rem(10px);
+			padding: rem(10px);
+			text-align: left;
 		}
 
-		a {
-			color: $colour--yellow;
+		ul {
+			display: table;
+			width: 100%;
 
-			@include on-event {
-				color: $colour--blue-light;
+			@include mq(sm) {
+				display: block;
 			}
 		}
 
-		.button-alt {
-			background-color: $colour--yellow;
-			border: 1px solid black;
-			border-bottom-width: 2px;
-			border-radius: rem(8px);
-			color: $colour--blue-dark;
-			font-weight: 700;
-			padding: rem(5px) rem(25px);
-			text-decoration: none;
+		li {
+			display: table-row;
+
+			@include mq(sm) {
+				display: inline-block;
+			}
+		}
+
+		a,
+		button {
+			color: $colour--yellow;
+			display: table-cell;
+			padding: rem(8px);
+			height: 10vh;
+			vertical-align: middle;
+
+			@include mq(sm) {
+				display: inline-block;
+				height: auto;
+			}
 
 			@include on-event {
 				background-color: $colour--blue-light;
 				color: $colour--blue-dark;
+			}
+
+			@include mq(sm) {
+				display: inline-block;
+				padding: 0;
+
+				@include on-event {
+					background-color: transparent;
+					color: $colour--blue-light;
+				}
+			}
+		}
+
+		button {
+			color: $colour--white;
+			text-transform: uppercase;
+			width: 100%;
+		}
+
+		.button-alt {
+			@include mq(sm) {
+				background-color: $colour--yellow;
+				border: 1px solid black;
+				border-bottom-width: 2px;
+				border-radius: rem(8px);
+				color: $colour--blue-dark;
+				font-weight: 700;
+				margin-top: -(rem(5px));
+				padding: rem(5px) rem(25px);
+				text-decoration: none;
+
+				@include on-event {
+					background-color: $colour--blue-light;
+					color: $colour--blue-dark;
+				}
 			}
 		}
 	}
@@ -151,13 +232,15 @@ a:link {
 	}
 
 	.right {
-		float: right;
+		@include mq(sm) {
+			float: right;
+		}
 	}
 }
 
 // Buttons
 .button,
-button {
+button:not(.menu-toggle) {
 	background-color: $colour--yellow;
 	border-radius: rem(8px);
 	box-shadow: 0 6px $colour--sand;
@@ -198,8 +281,8 @@ button {
 		padding: rem(15px);
 		transition: none;
 
-		@include mq(sm) {
-			max-width: rem(500px);
+		@include mq(xs) {
+			max-width: rem(460px);
 		}
 
 		@include mq(sm) {
@@ -219,27 +302,61 @@ button {
 	}
 }
 
+.menu-toggle {
+	background: none;
+	border: none;
+	height: rem(34px);
+	padding: rem(5px);
+	width: rem(34px);
+
+	@include mq(sm) {
+		display: none;
+	}
+
+	svg {
+		height: rem(34px);
+		fill: $colour--white;
+		width: rem(34px);
+	}
+}
+
+.menu-back {
+	background: none;
+	border: none;
+	padding: 0;
+
+	.navigation.primary & {
+		height: auto;
+
+		@include mq(sm) {
+			display: none;
+		}
+	}
+}
+
 // Header
 header {
+	background-image: url("img/code.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 	border-bottom: 8px solid $colour--blue-dark;
+	padding: rem(40px);
 	position: relative;
+	text-align: center;
 }
 
 .logo {
 	@include narrow;
 	color: $colour--blue-light;
-	font-size: rem(102px);
+	font-size: rem(88px);
 	font-weight: 200;
-	left: 50%;
 	margin: auto;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	text-align: center;
 	text-shadow: 3px 3px 5px rgba(black, 0.3);
 
-	@include mq(xs) {
-		font-size: rem(156px);
+	@include mq(sm) {
+		font-size: rem(140px);
 	}
 
 	span {

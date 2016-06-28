@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/site.min.css">
+    <script src="js/header.min.js"></script>
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,8 +28,7 @@
     <!-- @todo -->
     <!-- 1. Finish off the responsive polish -->
     <!-- 2. Implement responsive images -->
-    <!-- 2. Build the mobile menu -->
-    <!-- 3. Add microformats where possible. -->
+    <!-- 3. Add microformats where possible -->
     <!-- 4. Colour contrast & blindness checks -->
     <!-- 5. no-js love -->
     <!-- 6. Cross browser love -->
@@ -66,13 +66,20 @@
                     <li class="right">
                         <a href="#section-tickets" class="button-alt">Tickets</a>
                     </li>
+                    <li class="back">
+                        <button class="menu-toggle menu-back">Close Menu</button>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
     <header>
-        <img src="img/code.jpg" alt="HTML code" />
-        <h1 class="logo" aria-hidden="true"><span>&lt;</span>FEN<span>/&gt;</span></h1>
+        <button id="menu-toggle" class="menu-toggle" aria-controls="navigation" aria-expanded="false">
+            <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewbox="0 0 24 24">
+              <path fill-rule="evenodd" d="M0 2h25v4H0V2zm0 8h25v4H0v-4zm0 8h25v4H0v-4z"/>
+            </svg>
+        </button>
+        <h1 class="logo"><span aria-hidden="true">&lt;</span>FEN<span aria-hidden="true">/&gt;</span></h1>
     </header>
     <main>
         <article>
@@ -141,18 +148,16 @@
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
                             <div class="speaker-bio">
-                                <h4 class="speaker-name">You?</h4>
-                                <p class="speaker-title">Apply to speak!</p>
-                                <p class="speaker-twitter"><a href="mailto:hello@frontendnorth.com" title="Send us an Email">Email Us</a></p>
+                                <h4 class="speaker-name">T.B.C</h4>
+                                <p class="speaker-title">Announcing soon!</p>
                             </div>
                         </div>
                         <!-- TBC Speaker -->
                         <div class="col sm3 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
-                            <div class="speaker-bio">
-                                <h4 class="speaker-name">You?</h4>
-                                <p class="speaker-title">Apply to speak!</p>
-                                <p class="speaker-twitter"><a href="mailto:hello@frontendnorth.com" title="Send us an Email">Email Us</a></p>
+                               <div class="speaker-bio">
+                                <h4 class="speaker-name">T.B.C</h4>
+                                <p class="speaker-title">Announcing soon!</p>
                             </div>
                         </div>
                         <!-- TBC Speaker -->

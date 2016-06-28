@@ -25,7 +25,7 @@ module.exports = {
 			'!assets/js/lib/modernizr-custom.js'
 		],
 		tasks: [
-			'jshint',
+			// 'jshint',
 			'modernizr',
 			'concat',
 			'uglify',

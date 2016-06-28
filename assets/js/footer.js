@@ -1,5 +1,4 @@
 jQuery(function($) {
-
 	// Smooth scrolling to anchors
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
@@ -33,6 +32,24 @@ jQuery(function($) {
 
     if ($(venueCarousel).length > 0) {
         slickInit(venueCarousel, true, 3000, 500, true, false, false, 1);
+    }
+
+    // Mobile Menu Toggle.
+
+    var menuToggle = $('.menu-toggle');
+    var menuTarget = $('.navigation-wrapper');
+    var menuLinks  = $('.navigation a');
+
+    menuToggle.on('click', function() {
+        menuTarget.fadeToggle();
+    });
+
+    if (Modernizr.mq('all and (max-width: 767px)')) {
+        menuLinks.on('click', function() {
+
+            menuTarget.fadeToggle('fast');
+
+        });
     }
 
 }(jQuery));
