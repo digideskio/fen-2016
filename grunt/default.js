@@ -11,6 +11,7 @@ module.exports = function( grunt ) {
 		"uglify",
 		//"svgmin",
 		"imagemin",
+		"htmlmin",
 		"clean",
 		"notify:build"
 	] );
