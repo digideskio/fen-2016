@@ -169,6 +169,26 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 scrollwheel: false
             };
+
+            // Patch to prevent Roboto download
+            // http://stackoverflow.com/questions/25523806/google-maps-v3-prevent-api-from-loading-roboto-font
+			var head = document.getElementsByTagName('head')[0];
+
+			// Save the original method
+			var insertBefore = head.insertBefore;
+
+			// Replace it!
+			head.insertBefore = function (newElement, referenceElement) {
+
+			    if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
+
+			        console.info('Prevented Roboto from loading!');
+			        return;
+			    }
+
+			    insertBefore.call(head, newElement, referenceElement);
+			};
+
             map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
             marker = new google.maps.Marker({
                 map: map,
