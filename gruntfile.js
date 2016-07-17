@@ -32,6 +32,7 @@ module.exports = function(grunt) {
 			// for inclusion in the FOOTER.
 			// -------------------------------------
 			concatFoot: [
+				'assets/js/lib/jquery-1.12.0.js',
 				'bower_components/underscore/underscore.js',
 				'bower_components/slick-carousel/slick/slick.js',
 				'assets/js/footer.js'
