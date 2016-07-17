@@ -86,6 +86,36 @@
         }
     }(typeof global !== "undefined" ? global : this));
 
+    /*! onloadCSS: adds onload support for asynchronous stylesheets loaded with loadCSS. [c]2016 @zachleat, Filament Group, Inc. Licensed MIT */
+    /* global navigator */
+    /* exported onloadCSS */
+    function onloadCSS( ss, callback ) {
+        var called;
+        function newcb(){
+                if( !called && callback ){
+                    called = true;
+                    callback.call( ss );
+                }
+        }
+        if( ss.addEventListener ){
+            ss.addEventListener( "load", newcb );
+        }
+        if( ss.attachEvent ){
+            ss.attachEvent( "onload", newcb );
+        }
+
+        // This code is for browsers that don’t support onload
+        // No support for onload (it'll bind but never fire):
+        //  * Android 4.3 (Samsung Galaxy S4, Browserstack)
+        //  * Android 4.2 Browser (Samsung Galaxy SIII Mini GT-I8200L)
+        //  * Android 2.3 (Pantech Burst P9070)
+
+        // Weak inference targets Android < 4.4
+        if( "isApplicationInstalled" in navigator && "onloadcssdefined" in ss ) {
+            ss.onloadcssdefined( newcb );
+        }
+    }
+
 	/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
 	(function( w ){
 		var loadJS = function( src, cb ){
@@ -111,7 +141,10 @@
 	</script>
 	<script>
 	// Initialize loadCSS and loadJS.
-	loadCSS( "css/site.min.css" );
+    var stylesheet = loadCSS( "css/site.min.css" );
+    onloadCSS( stylesheet, function() {
+        console.log( "Stylesheet has loaded." );
+    });
 	loadJS( "js/header.min.js" );
 	loadJS( "https://maps.googleapis.com/maps/api/js?v=3.exp", function() {
 
@@ -620,8 +653,8 @@
                 </section>
             </div>
             <!-- Section: Other Benefits -->
-            <div class="section-benefits-wrapper section-wrapper">
-                <section id="section-benefits" class="section-benefits-content section-content" aria-labelledby="section-benefits-title">
+            <div id="section-benefits" class="section-benefits-wrapper section-wrapper">
+                <section class="section-benefits-content section-content" aria-labelledby="section-benefits-title">
                     <h2 id="section-benefits-title" class="section-benefits-title section-title">Other Great Benefits</h2>
                     <div class="row benefits">
                         <div class="col sm6 md3 benefit">
@@ -821,7 +854,7 @@
         </footer>
     </div>
     <!-- Scripts -->
-    <script src="js/footer.min.js" async></script>
+    <script src="js/footer.min.js"></script>
 </body>
 
 </html>
