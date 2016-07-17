@@ -475,6 +475,10 @@ header {
 	border-top: 0;
 }
 
+.section-speakers-content {
+	padding-top: 0;
+}
+
 .speakers-headline-title,
 .speakers-lightning-title {
 	@include narrow;
@@ -991,4 +995,9 @@ footer {
 
 .text-center {
 	text-align: center;
+}
+
+#gmap_canvas img {
+	max-width: none !important;
+	background: none !important;
 }
