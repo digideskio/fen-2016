@@ -7,10 +7,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="css/site.min.css" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="css/site.min.css">
-    </noscript>
     <script>
     /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
     (function(w) {
@@ -90,50 +86,6 @@
         }
     }(typeof global !== "undefined" ? global : this));
 
-    /*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
-    (function(w) {
-        // rel=preload support test
-        if (!w.loadCSS) {
-            return;
-        }
-        var rp = loadCSS.relpreload = {};
-        rp.support = function() {
-            try {
-                return w.document.createElement("link").relList.supports("preload");
-            } catch (e) {
-                return false;
-            }
-        };
-
-        // loop preload links and fetch using loadCSS
-        rp.poly = function() {
-            var links = w.document.getElementsByTagName("link");
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i];
-                if (link.rel === "preload" && link.getAttribute("as") === "style") {
-                    w.loadCSS(link.href, link);
-                    link.rel = null;
-                }
-            }
-        };
-
-        // if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS
-        if (!rp.support()) {
-            rp.poly();
-            var run = w.setInterval(rp.poly, 300);
-            if (w.addEventListener) {
-                w.addEventListener("load", function() {
-                    w.clearInterval(run);
-                });
-            }
-            if (w.attachEvent) {
-                w.attachEvent("onload", function() {
-                    w.clearInterval(run);
-                })
-            }
-        }
-    }(this));
-
 	/*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
 	(function( w ){
 		var loadJS = function( src, cb ){
@@ -158,7 +110,8 @@
 	}( typeof global !== "undefined" ? global : this ));
 	</script>
 	<script>
-	// Initialize loadJS.
+	// Initialize loadCSS and loadJS.
+	loadCSS( "css/site.min.css" );
 	loadJS( "js/header.min.js" );
 	loadJS( "https://maps.googleapis.com/maps/api/js?v=3.exp", function() {
 
@@ -170,7 +123,7 @@
                 scrollwheel: false
             };
 
-            // Patch to prevent Roboto download
+            // Patch to prevent Roboto download.
             // http://stackoverflow.com/questions/25523806/google-maps-v3-prevent-api-from-loading-roboto-font
 			var head = document.getElementsByTagName('head')[0];
 
@@ -188,6 +141,7 @@
 
 			    insertBefore.call(head, newElement, referenceElement);
 			};
+			// End Patch.
 
             map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
             marker = new google.maps.Marker({
@@ -227,6 +181,10 @@
     <!--[if lt IE 9]>
 		<script type="text/javascript" src="assets/js/header_ie.min.js"></script>
 	<![endif]-->
+
+    <noscript>
+        <link rel="stylesheet" href="css/site.min.css">
+    </noscript>
 </head>
 
 <body>
