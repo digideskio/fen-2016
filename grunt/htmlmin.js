@@ -4,7 +4,9 @@ module.exports = {
 	site: {
 		options: {
 			removeComments: true,
-			collapseWhitespace: true
+			collapseWhitespace: true,
+			minifyJS: true,
+			minifyCSS: true,
 		},
 		files: [{
             expand: true,
