@@ -156,8 +156,35 @@
 			w.loadJS = loadJS;
 		}
 	}( typeof global !== "undefined" ? global : this ));
-
+	</script>
+	<script>
+	// Initialize loadCSS and loadJS.
 	loadJS( "js/header.min.js" );
+	loadJS( "https://maps.googleapis.com/maps/api/js?v=3.exp", function() {
+
+		function init_map() {
+            var myOptions = {
+                zoom: 15,
+                center: new google.maps.LatLng(53.3806411, -1.4709086000000298),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scrollwheel: false
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(53.3806411, -1.4709086000000298)
+            });
+            infowindow = new google.maps.InfoWindow({
+                content: '<strong>Sheffield City Hall</strong><br>Barker\'s Pool, S1 2JA<br>'
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map, marker);
+            });
+            infowindow.open(map, marker);
+        }
+        google.maps.event.addDomListener(window, 'load', init_map);
+
+	} );
     </script>
 
     <script>
@@ -591,32 +618,13 @@
                     <p>Hosted in the heart of Sheffield (<a href="http://metro.co.uk/2013/05/30/top-10-reasons-why-sheffield-is-the-happiest-city-in-the-uk-3820295/" title="Why Sheffield is one of the happiest cities in the UK">voted happiest city in the UK 2013!</a>) the beautiful <a href="http://www.sheffieldcityhall.com/" title="City Hall info">City Hall</a> will host this year's FrontEndNorth.</p>
                     <p>The City Hall is easy to find, has great transport and parking facilities and with space for up to 500 people the conference will have plenty of room for our delegates, sponsors and speakers to mingle and be inspired.</p>
                     <p>You can find out more about how to get to the City Hall on the <a href="http://www.sheffieldcityhall.com/find_Sheffield_City_Hall/" title="Sheffield City Hall website">venue's website</a>.</p>
-                    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
                     <div class='map' aria-hidden="true">
                         <div id='gmap_canvas'></div>
                     </div>
                     <script type='text/javascript'>
-                    function init_map() {
-                        var myOptions = {
-                            zoom: 15,
-                            center: new google.maps.LatLng(53.3806411, -1.4709086000000298),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP,
-                            scrollwheel: false
-                        };
-                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                        marker = new google.maps.Marker({
-                            map: map,
-                            position: new google.maps.LatLng(53.3806411, -1.4709086000000298)
-                        });
-                        infowindow = new google.maps.InfoWindow({
-                            content: '<strong>Sheffield City Hall</strong><br>Barker\'s Pool, S1 2JA<br>'
-                        });
-                        google.maps.event.addListener(marker, 'click', function() {
-                            infowindow.open(map, marker);
-                        });
-                        infowindow.open(map, marker);
-                    }
-                    google.maps.event.addDomListener(window, 'load', init_map);
+                    setTimeout(function() {
+
+	                }, 500);
                     </script>
                     <h2 id="section-location-title" class="section-location-title section-title">Getting to Sheffield</h2>
                     <p>Traveling to Sheffield and want to learn more? Check the <a href="https://www.sheffield.gov.uk/roads/travel.html" title="Travel to Sheffield">Sheffield City Council website</a> for information on getting around the city.</p>
