@@ -5,12 +5,14 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'default', [
 		"sass",
 		"postcss",
+		"criticalcss",
 		"cssmin",
 		"modernizr",
 		"concat",
 		"uglify",
 		//"svgmin",
 		"imagemin",
+		"inline",
 		"htmlmin",
 		"clean",
 		"notify:build"

@@ -11,8 +11,9 @@ module.exports = {
 		files: [{
             expand: true,
             cwd: 'assets/html/',
-            src: ['*.html'],
+            src: ['*.tmp.html'],
             dest: '',
+            ext: '.html',
         }]
 	},
 }

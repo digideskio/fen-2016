@@ -5,8 +5,9 @@ module.exports = {
 	// by the grunt-contrib-concat task.
 	// -------------------------------------
 	clean_js: {
-		src: [
-			'assets/js/*.tmp.js'
-		]
+		src: [ 'assets/js/*.tmp.js' ]
+	},
+	clean_html: {
+		src: [ 'assets/html/*.tmp.html' ]
 	}
 };

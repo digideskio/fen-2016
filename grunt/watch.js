@@ -41,7 +41,9 @@ module.exports = {
 		tasks: [
 			'sass',
 			'postcss',
+			'criticalcss',
 			'cssmin',
+			'inline',
 			'htmlmin',
 			'notify:styles'
 		]
