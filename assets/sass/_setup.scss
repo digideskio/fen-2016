@@ -27,6 +27,13 @@ $mq--sm-max: (max-width: $bp--sm - 1);
 /// Breakpoint - Medium
 /// @type Number
 /// @group responsive
+$bp--sm-to-md: 896px;
+$mq--sm-to-md-min: (min-width: $bp--sm-to-md);
+$mq--sm-to-md-max: (max-width: $bp--sm-to-md - 1);
+
+/// Breakpoint - Medium
+/// @type Number
+/// @group responsive
 $bp--md: 1024px;
 $mq--md-min: (min-width: $bp--md);
 $mq--md-max: (max-width: $bp--md - 1);
@@ -57,7 +64,7 @@ $mq--xxl-max: (max-width: $bp--xxl - 1);
 /// @prop {Map} query - Breakpoint query
 /// @group responsive
 /// @see {mixin} mq
-$breakpoints: ("xxs": $mq--xxs-min, "xxs-max": $mq--xxs-max, "xs": $mq--xs-min, "xs-max": $mq--xs-max, "sm": $mq--sm-min, "sm-max": $mq--sm-max, "md": $mq--md-min, "md-max": $mq--md-max, "lg": $mq--lg-min, "lg-max": $mq--lg-max, "xl": $mq--xl-min, "xl-max": $mq--xl-max, "xxl": $mq--xxl-min, "xxl-max": $mq--xxl-max) !default;
+$breakpoints: ("xxs": $mq--xxs-min, "xxs-max": $mq--xxs-max, "xs": $mq--xs-min, "xs-max": $mq--xs-max, "sm": $mq--sm-min, "sm-max": $mq--sm-max, "sm-to-md": $mq--sm-to-md-min, "sm-to-md-max": $mq--sm-to-md-max, "md": $mq--md-min, "md-max": $mq--md-max, "lg": $mq--lg-min, "lg-max": $mq--lg-max, "xl": $mq--xl-min, "xl-max": $mq--xl-max, "xxl": $mq--xxl-min, "xxl-max": $mq--xxl-max) !default;
 
 // Variables - Colours
 $colour--blue-light: #cfe8eb;
