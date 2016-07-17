@@ -1,12 +1,139 @@
-<!doctype html><html class="no-js" lang="en"><head><title>FrontEndNorth 2016</title><meta name="description" content="A conference for front-end developers, designers and people who make things for the web taking place on September 30th, 2016 at Sheffield City Hall."><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/site.min.css"><script src="js/header.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!doctype html><html class="no-js" lang="en"><head><title>FrontEndNorth 2016</title><meta name="description" content="A conference for front-end developers, designers and people who make things for the web taking place on September 30th, 2016 at Sheffield City Hall."><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preload" href="css/site.min.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/site.min.css"></noscript><script>/*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    (function(w) {
+        "use strict";
+        /* exported loadCSS */
+        var loadCSS = function(href, before, media) {
+            // Arguments explained:
+            // `href` [REQUIRED] is the URL for your CSS file.
+            // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+            // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+            // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+            var doc = w.document;
+            var ss = doc.createElement("link");
+            var ref;
+            if (before) {
+                ref = before;
+            } else {
+                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                ref = refs[refs.length - 1];
+            }
 
-     ga('create', 'UA-79524679-1', 'auto');
-     ga('send', 'pageview');</script><!--[if lt IE 9]>
-        <script type="text/javascript" src="assets/js/header_ie.min.js"></script>
-    <![endif]--></head><body><a class="sr-only" href="#section-about">Skip to main content</a><div class="navigation-wrapper"><nav id="navigation" class="navigation primary"><div class="col"><h2 class="sr-only">Navigation</h2><ul><li><a href="#section-about">About</a></li><li><a href="#section-speakers">Speakers</a></li><li><a href="#section-schedule">Schedule</a></li><li><a href="#section-location">Location</a></li><li><a href="#section-social">The Social</a></li><li><a href="#section-benefits">Benefits</a></li><li><a href="#section-sponsors">Sponsors</a></li><li><a href="#section-conduct">Conduct</a></li><li class="right"><a href="#section-tickets" class="button-alt">Tickets</a></li><li class="back"><button class="menu-toggle menu-back">Close Menu</button></li></ul></div></nav></div><header><button id="menu-toggle" class="menu-toggle" aria-controls="navigation" aria-expanded="false"><svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewbox="0 0 24 24"><path fill-rule="evenodd" d="M0 2h25v4H0V2zm0 8h25v4H0v-4zm0 8h25v4H0v-4z"/></svg></button><h1 class="logo"><span aria-hidden="true">&lt;</span>FEN<span aria-hidden="true">/&gt;</span></h1></header><main><article><div id="section-about" class="section-about-wrapper section-wrapper"><div class="section-about-content section-content" aria-labelledby="section-about-title"><h1 id="section-about-title" class="section-about-title section-title">FrontEndNorth 2016</h1><h2 class="strapline text-center"><strong>Full-day conference, Friday September 30th, 2016</strong> at <a href="#section-location">Sheffield City Hall</a></h2><p>An event for front-end developers, designers and people who make things for the web taking place on <strong>September 30th, 2016</strong> at Sheffield City Hall.</p><p>Returning from a year's hiatus after our successful debut in 2014 we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p><a href="#section-tickets" class="cta button">View tickets and purchase</a></div></div><div id="section-speakers" class="section-speakers-wrapper section-wrapper"><section class="section-speakers-content section-content" aria-labelledby="section-speakers-title"><h2 id="section-speakers-title" class="section-speakers-title section-title">Our Speaker Line-up for 2016</h2><p>This year we're excited to have 12 fantastic speakers covering a wide range of front-end development topics.</p><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-harry.jpg" alt="Harry Roberts"><div class="speaker-bio"><h4 class="speaker-name">Harry <span>Roberts</span></h4><p class="speaker-title">Consultant <span>Front-end Architect</span></p><p class="speaker-twitter"><a href="https://twitter.com/csswizardry" target="_blank" rel="nofollow">@CSSwizardry</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-lea.jpg" alt="Lea Verou"><div class="speaker-bio"><h4 class="speaker-name">Lea <span>Verou</span></h4><p class="speaker-title">Front-end Developer <span>and Author</span></p><p class="speaker-twitter"><a href="https://twitter.com/leaverou" target="_blank" rel="nofollow">@LeaVerou</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-stu.jpg" alt="Stu Robson"><div class="speaker-bio"><h4 class="speaker-name">Stuart <span>Robson</span></h4><p class="speaker-title">Front-end Developer <span>and Author</span></p><p class="speaker-twitter"><a href="https://twitter.com/sturobson" target="_blank" rel="nofollow">@StuRobson</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-tammie.jpg" alt="Tammie Lister"><div class="speaker-bio"><h4 class="speaker-name">Tammie <span>Lister</span></h4><p class="speaker-title">Theme Wrangler <span>at Automattic</span></p><p class="speaker-twitter"><a href="https://twitter.com/karmatosed" target="_blank" rel="nofollow">@Karmatosed</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-robin.jpg" alt="Robin Whittleton"><div class="speaker-bio"><h4 class="speaker-name">Robin <span>Whittleton</span></h4><p class="speaker-title">Head of Front-end <span>for the GDS Team</span></p><p class="speaker-twitter"><a href="https://twitter.com/robinwhittleton" target="_blank" rel="nofollow">@RobinWhittleton</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-chris.jpg" alt="Chris Hutchinson"><div class="speaker-bio"><h4 class="speaker-name">Chris <span>Hutchinson</span></h4><p class="speaker-title">Newsroom Developer <span>at The Times</span></p><p class="speaker-twitter"><a href="https://twitter.com/chrishutchinson" target="_blank" rel="nofollow">@ChrisHutchinson</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><div class="row"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><div class="row"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><p>We'll be confirming the rest of our line-up Real Soon Now <sup>&trade;</sup> so stay tuned!</p></section></div><div id="section-schedule" class="section-schedule-wrapper section-wrapper white"><section class="section-schedule-content section-content" aria-labelledby="section-schedule-title"><h2 id="section-schedule-title" class="section-schedule-title section-title">A Full Day of Front-end Goodness</h2><p>We're still working the details out on our timings at the moment but be assured that the day will be stuffed with talks of various majestic topics.</p><div class="schedule-table"><div class="row"><div class="col sm3 schedule-time"><p>9am</p></div><div class="col sm9 schedule-description"><p>Doors open for <strong>registration</strong> and refeshments.</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>9:40am - 10am</p></div><div class="col sm9 schedule-description"><p>FrontEndNorth 2016 begins with <strong>opening remarks</strong> and details of our fantastic <strong>competition prizes</strong>.</p></div></div><div class="row wip"><div class="col sm3 schedule-time"><p>10am - 6pm</p></div><div class="col sm9 schedule-description"><p>Full schedule is currently a <strong>work in progress</strong>.</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>6pm - 6:20pm</p></div><div class="col sm9 schedule-description"><p>Closing remarks including the announcement of the <strong>competition winners</strong>!</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>6:20pm - 9:30pm</p></div><div class="col sm9 schedule-description"><p><strong>The Social</strong> begins as FrontEndNorth 2016 comes to an end.</p><p>Kick back with an alcoholic or non-alcoholic beverage in the company of other delegates to digest the day, chat and make new friends/contacts!</p></div></div></div></section></div><div id="section-location" class="section-location-wrapper section-wrapper"><section class="section-location-content section-content" aria-labelledby="section-location-title"><div id="venue-carousel" class="venue-carousel"><img src="img/venue.jpg" alt="Sheffield City Hall"> <img src="img/ballroom_angle.jpg" alt="Ballroom at Sheffield City Hall"> <img src="img/ballroom_seating.jpg" alt="Ballroom at Sheffield City Hall"></div><h2 id="section-location-title" class="section-location-title section-title">Fantastic Venue &amp; Location</h2><p>Hosted in the heart of Sheffield (<a href="http://metro.co.uk/2013/05/30/top-10-reasons-why-sheffield-is-the-happiest-city-in-the-uk-3820295/" title="Why Sheffield is one of the happiest cities in the UK">voted happiest city in the UK 2013!</a>) the beautiful <a href="http://www.sheffieldcityhall.com/" title="City Hall info">City Hall</a> will host this year's FrontEndNorth.</p><p>The City Hall is easy to find, has great transport and parking facilities and with space for up to 500 people the conference will have plenty of room for our delegates, sponsors and speakers to mingle and be inspired.</p><p>You can find out more about how to get to the City Hall on the <a href="http://www.sheffieldcityhall.com/find_Sheffield_City_Hall/" title="Sheffield City Hall website">venue's website</a>.</p><script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script><div class="map" aria-hidden="true"><div id="gmap_canvas"></div></div><script type="text/javascript">function init_map() {
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+            ss.media = "only x";
+
+            // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+            function ready(cb) {
+                if (doc.body) {
+                    return cb();
+                }
+                setTimeout(function() {
+                    ready(cb);
+                });
+            }
+            // Inject link
+            // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+            // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+            ready(function() {
+                ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+            });
+            // A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+            var onloadcssdefined = function(cb) {
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while (i--) {
+                    if (sheets[i].href === resolvedHref) {
+                        return cb();
+                    }
+                }
+                setTimeout(function() {
+                    onloadcssdefined(cb);
+                });
+            };
+
+            function loadCB() {
+                if (ss.addEventListener) {
+                    ss.removeEventListener("load", loadCB);
+                }
+                ss.media = media || "all";
+            }
+
+            // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+            if (ss.addEventListener) {
+                ss.addEventListener("load", loadCB);
+            }
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(loadCB);
+            return ss;
+        };
+        // commonjs
+        if (typeof exports !== "undefined") {
+            exports.loadCSS = loadCSS;
+        } else {
+            w.loadCSS = loadCSS;
+        }
+    }(typeof global !== "undefined" ? global : this));
+
+    /*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
+    (function(w) {
+        // rel=preload support test
+        if (!w.loadCSS) {
+            return;
+        }
+        var rp = loadCSS.relpreload = {};
+        rp.support = function() {
+            try {
+                return w.document.createElement("link").relList.supports("preload");
+            } catch (e) {
+                return false;
+            }
+        };
+
+        // loop preload links and fetch using loadCSS
+        rp.poly = function() {
+            var links = w.document.getElementsByTagName("link");
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                if (link.rel === "preload" && link.getAttribute("as") === "style") {
+                    w.loadCSS(link.href, link);
+                    link.rel = null;
+                }
+            }
+        };
+
+        // if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS
+        if (!rp.support()) {
+            rp.poly();
+            var run = w.setInterval(rp.poly, 300);
+            if (w.addEventListener) {
+                w.addEventListener("load", function() {
+                    w.clearInterval(run);
+                });
+            }
+            if (w.attachEvent) {
+                w.attachEvent("onload", function() {
+                    w.clearInterval(run);
+                })
+            }
+        }
+    }(this));</script><script src="js/header.min.js"></script><script>(function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-79524679-1', 'auto');
+    ga('send', 'pageview');</script><!--[if lt IE 9]>
+		<script type="text/javascript" src="assets/js/header_ie.min.js"></script>
+	<![endif]--></head><body><a class="sr-only" href="#section-about">Skip to main content</a><div class="navigation-wrapper"><nav id="navigation" class="navigation primary"><div class="col"><h2 class="sr-only">Navigation</h2><ul><li><a href="#section-about">About</a></li><li><a href="#section-speakers">Speakers</a></li><li><a href="#section-schedule">Schedule</a></li><li><a href="#section-location">Location</a></li><li><a href="#section-social">The Social</a></li><li><a href="#section-benefits">Benefits</a></li><li><a href="#section-sponsors">Sponsors</a></li><li><a href="#section-conduct">Conduct</a></li><li class="right"><a href="#section-tickets" class="button-alt">Tickets</a></li><li class="back"><button class="menu-toggle menu-back">Close Menu</button></li></ul></div></nav></div><header><button id="menu-toggle" class="menu-toggle" aria-controls="navigation" aria-expanded="false"><svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewbox="0 0 24 24"><path fill-rule="evenodd" d="M0 2h25v4H0V2zm0 8h25v4H0v-4zm0 8h25v4H0v-4z"/></svg></button><h1 class="logo"><span aria-hidden="true">&lt;</span>FEN<span aria-hidden="true">/&gt;</span></h1></header><main><article><div id="section-about" class="section-about-wrapper section-wrapper"><div class="section-about-content section-content" aria-labelledby="section-about-title"><h1 id="section-about-title" class="section-about-title section-title">FrontEndNorth 2016</h1><h2 class="strapline text-center"><strong>Full-day conference, Friday September 30th, 2016</strong> at <a href="#section-location">Sheffield City Hall</a></h2><p>An event for front-end developers, designers and people who make things for the web taking place on <strong>September 30th, 2016</strong> at Sheffield City Hall.</p><p>Returning from a year's hiatus after our successful debut in 2014 we can't wait to bring the front-end development community together for another great day of learning, insight and inspiration!</p><a href="#section-tickets" class="cta button">View tickets and purchase</a></div></div><div id="section-speakers" class="section-speakers-wrapper section-wrapper"><section class="section-speakers-content section-content" aria-labelledby="section-speakers-title"><h2 id="section-speakers-title" class="section-speakers-title section-title">Our Speaker Line-up for 2016</h2><p>This year we're excited to have 12 fantastic speakers covering a wide range of front-end development topics.</p><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-harry.jpg" alt="Harry Roberts"><div class="speaker-bio"><h4 class="speaker-name">Harry <span>Roberts</span></h4><p class="speaker-title">Consultant <span>Front-end Architect</span></p><p class="speaker-twitter"><a href="https://twitter.com/csswizardry" target="_blank" rel="nofollow">@CSSwizardry</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-lea.jpg" alt="Lea Verou"><div class="speaker-bio"><h4 class="speaker-name">Lea <span>Verou</span></h4><p class="speaker-title">Front-end Developer <span>and Author</span></p><p class="speaker-twitter"><a href="https://twitter.com/leaverou" target="_blank" rel="nofollow">@LeaVerou</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-stu.jpg" alt="Stu Robson"><div class="speaker-bio"><h4 class="speaker-name">Stuart <span>Robson</span></h4><p class="speaker-title">Front-end Developer <span>and Author</span></p><p class="speaker-twitter"><a href="https://twitter.com/sturobson" target="_blank" rel="nofollow">@StuRobson</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-tammie.jpg" alt="Tammie Lister"><div class="speaker-bio"><h4 class="speaker-name">Tammie <span>Lister</span></h4><p class="speaker-title">Theme Wrangler <span>at Automattic</span></p><p class="speaker-twitter"><a href="https://twitter.com/karmatosed" target="_blank" rel="nofollow">@Karmatosed</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-robin.jpg" alt="Robin Whittleton"><div class="speaker-bio"><h4 class="speaker-name">Robin <span>Whittleton</span></h4><p class="speaker-title">Head of Front-end <span>for the GDS Team</span></p><p class="speaker-twitter"><a href="https://twitter.com/robinwhittleton" target="_blank" rel="nofollow">@RobinWhittleton</a></p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/speakers-chris.jpg" alt="Chris Hutchinson"><div class="speaker-bio"><h4 class="speaker-name">Chris <span>Hutchinson</span></h4><p class="speaker-title">Newsroom Developer <span>at The Times</span></p><p class="speaker-twitter"><a href="https://twitter.com/chrishutchinson" target="_blank" rel="nofollow">@ChrisHutchinson</a></p></div></div></div><div class="row speakers"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><div class="row"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><div class="row"><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div><div class="col xs6 speaker"><img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker"><div class="speaker-bio"><h4 class="speaker-name">T.B.C</h4><p class="speaker-title">Announcing soon!</p></div></div></div><p>We'll be confirming the rest of our line-up Real Soon Now <sup>&trade;</sup> so stay tuned!</p></section></div><div id="section-schedule" class="section-schedule-wrapper section-wrapper white"><section class="section-schedule-content section-content" aria-labelledby="section-schedule-title"><h2 id="section-schedule-title" class="section-schedule-title section-title">A Full Day of Front-end Goodness</h2><p>We're still working the details out on our timings at the moment but be assured that the day will be stuffed with talks of various majestic topics.</p><div class="schedule-table"><div class="row"><div class="col sm3 schedule-time"><p>9am</p></div><div class="col sm9 schedule-description"><p>Doors open for <strong>registration</strong> and refeshments.</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>9:40am - 10am</p></div><div class="col sm9 schedule-description"><p>FrontEndNorth 2016 begins with <strong>opening remarks</strong> and details of our fantastic <strong>competition prizes</strong>.</p></div></div><div class="row wip"><div class="col sm3 schedule-time"><p>10am - 6pm</p></div><div class="col sm9 schedule-description"><p>Full schedule is currently a <strong>work in progress</strong>.</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>6pm - 6:20pm</p></div><div class="col sm9 schedule-description"><p>Closing remarks including the announcement of the <strong>competition winners</strong>!</p></div></div><div class="row"><div class="col sm3 schedule-time"><p>6:20pm - 9:30pm</p></div><div class="col sm9 schedule-description"><p><strong>The Social</strong> begins as FrontEndNorth 2016 comes to an end.</p><p>Kick back with an alcoholic or non-alcoholic beverage in the company of other delegates to digest the day, chat and make new friends/contacts!</p></div></div></div></section></div><div id="section-location" class="section-location-wrapper section-wrapper"><section class="section-location-content section-content" aria-labelledby="section-location-title"><div id="venue-carousel" class="venue-carousel"><img src="img/venue.jpg" alt="Sheffield City Hall"> <img src="img/ballroom_angle.jpg" alt="Ballroom at Sheffield City Hall"> <img src="img/ballroom_seating.jpg" alt="Ballroom at Sheffield City Hall"></div><h2 id="section-location-title" class="section-location-title section-title">Fantastic Venue &amp; Location</h2><p>Hosted in the heart of Sheffield (<a href="http://metro.co.uk/2013/05/30/top-10-reasons-why-sheffield-is-the-happiest-city-in-the-uk-3820295/" title="Why Sheffield is one of the happiest cities in the UK">voted happiest city in the UK 2013!</a>) the beautiful <a href="http://www.sheffieldcityhall.com/" title="City Hall info">City Hall</a> will host this year's FrontEndNorth.</p><p>The City Hall is easy to find, has great transport and parking facilities and with space for up to 500 people the conference will have plenty of room for our delegates, sponsors and speakers to mingle and be inspired.</p><p>You can find out more about how to get to the City Hall on the <a href="http://www.sheffieldcityhall.com/find_Sheffield_City_Hall/" title="Sheffield City Hall website">venue's website</a>.</p><script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script><div class="map" aria-hidden="true"><div id="gmap_canvas"></div></div><script type="text/javascript">function init_map() {
                         var myOptions = {
                             zoom: 15,
                             center: new google.maps.LatLng(53.3806411, -1.4709086000000298),

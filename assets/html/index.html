@@ -7,21 +7,153 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/site.min.css">
+    <link rel="preload" href="css/site.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/site.min.css">
+    </noscript>
+    <script>
+    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    (function(w) {
+        "use strict";
+        /* exported loadCSS */
+        var loadCSS = function(href, before, media) {
+            // Arguments explained:
+            // `href` [REQUIRED] is the URL for your CSS file.
+            // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+            // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+            // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+            var doc = w.document;
+            var ss = doc.createElement("link");
+            var ref;
+            if (before) {
+                ref = before;
+            } else {
+                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                ref = refs[refs.length - 1];
+            }
+
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+            ss.media = "only x";
+
+            // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+            function ready(cb) {
+                if (doc.body) {
+                    return cb();
+                }
+                setTimeout(function() {
+                    ready(cb);
+                });
+            }
+            // Inject link
+            // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+            // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+            ready(function() {
+                ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+            });
+            // A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+            var onloadcssdefined = function(cb) {
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while (i--) {
+                    if (sheets[i].href === resolvedHref) {
+                        return cb();
+                    }
+                }
+                setTimeout(function() {
+                    onloadcssdefined(cb);
+                });
+            };
+
+            function loadCB() {
+                if (ss.addEventListener) {
+                    ss.removeEventListener("load", loadCB);
+                }
+                ss.media = media || "all";
+            }
+
+            // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+            if (ss.addEventListener) {
+                ss.addEventListener("load", loadCB);
+            }
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(loadCB);
+            return ss;
+        };
+        // commonjs
+        if (typeof exports !== "undefined") {
+            exports.loadCSS = loadCSS;
+        } else {
+            w.loadCSS = loadCSS;
+        }
+    }(typeof global !== "undefined" ? global : this));
+
+    /*! CSS rel=preload polyfill. Depends on loadCSS function. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT  */
+    (function(w) {
+        // rel=preload support test
+        if (!w.loadCSS) {
+            return;
+        }
+        var rp = loadCSS.relpreload = {};
+        rp.support = function() {
+            try {
+                return w.document.createElement("link").relList.supports("preload");
+            } catch (e) {
+                return false;
+            }
+        };
+
+        // loop preload links and fetch using loadCSS
+        rp.poly = function() {
+            var links = w.document.getElementsByTagName("link");
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                if (link.rel === "preload" && link.getAttribute("as") === "style") {
+                    w.loadCSS(link.href, link);
+                    link.rel = null;
+                }
+            }
+        };
+
+        // if link[rel=preload] is not supported, we must fetch the CSS manually using loadCSS
+        if (!rp.support()) {
+            rp.poly();
+            var run = w.setInterval(rp.poly, 300);
+            if (w.addEventListener) {
+                w.addEventListener("load", function() {
+                    w.clearInterval(run);
+                });
+            }
+            if (w.attachEvent) {
+                w.attachEvent("onload", function() {
+                    w.clearInterval(run);
+                })
+            }
+        }
+    }(this));
+    </script>
     <script src="js/header.min.js"></script>
     <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-     ga('create', 'UA-79524679-1', 'auto');
-     ga('send', 'pageview');
-
+    ga('create', 'UA-79524679-1', 'auto');
+    ga('send', 'pageview');
     </script>
     <!--[if lt IE 9]>
-        <script type="text/javascript" src="assets/js/header_ie.min.js"></script>
-    <![endif]-->
+		<script type="text/javascript" src="assets/js/header_ie.min.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -74,7 +206,7 @@
     <header>
         <button id="menu-toggle" class="menu-toggle" aria-controls="navigation" aria-expanded="false">
             <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewbox="0 0 24 24">
-              <path fill-rule="evenodd" d="M0 2h25v4H0V2zm0 8h25v4H0v-4zm0 8h25v4H0v-4z"/>
+                <path fill-rule="evenodd" d="M0 2h25v4H0V2zm0 8h25v4H0v-4zm0 8h25v4H0v-4z" />
             </svg>
         </button>
         <h1 class="logo"><span aria-hidden="true">&lt;</span>FEN<span aria-hidden="true">/&gt;</span></h1>
@@ -96,7 +228,6 @@
                 <section class="section-speakers-content section-content" aria-labelledby="section-speakers-title">
                     <h2 id="section-speakers-title" class="section-speakers-title section-title">Our Speaker Line-up for 2016</h2>
                     <p>This year we're excited to have 12 fantastic speakers covering a wide range of front-end development topics.</p>
-
                     <!-- <h3 class="speakers-headline-title">Headline Speakers</h3> -->
                     <div class="row speakers">
                         <!-- Harry Roberts -->
@@ -118,7 +249,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row speakers">
                         <!-- Stu Robson -->
                         <div class="col xs6 speaker">
@@ -139,7 +269,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row speakers">
                         <!-- Robin Whittledon -->
                         <div class="col xs6 speaker">
@@ -160,7 +289,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row speakers">
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
@@ -173,13 +301,12 @@
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
-                               <div class="speaker-bio">
+                            <div class="speaker-bio">
                                 <h4 class="speaker-name">T.B.C</h4>
                                 <p class="speaker-title">Announcing soon!</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
@@ -192,13 +319,12 @@
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
-                               <div class="speaker-bio">
+                            <div class="speaker-bio">
                                 <h4 class="speaker-name">T.B.C</h4>
                                 <p class="speaker-title">Announcing soon!</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
@@ -211,15 +337,13 @@
                         <!-- TBC Speaker -->
                         <div class="col xs6 speaker">
                             <img class="speaker-avatar" src="img/mystery.jpg" alt="TBC Speaker" />
-                               <div class="speaker-bio">
+                            <div class="speaker-bio">
                                 <h4 class="speaker-name">T.B.C</h4>
                                 <p class="speaker-title">Announcing soon!</p>
                             </div>
                         </div>
                     </div>
-
                     <p>We'll be confirming the rest of our line-up Real Soon Now <sup>&trade;</sup> so stay tuned!</p>
-
                 </section>
             </div>
             <!-- Section: Schedule -->
@@ -227,7 +351,6 @@
                 <section class="section-schedule-content section-content" aria-labelledby="section-schedule-title">
                     <h2 id="section-schedule-title" class="section-schedule-title section-title">A Full Day of Front-end Goodness</h2>
                     <p>We're still working the details out on our timings at the moment but be assured that the day will be stuffed with talks of various majestic topics.</p>
-
                     <div class="schedule-table">
                         <!-- Doors Open -->
                         <div class="row">
@@ -258,156 +381,156 @@
                         </div>
                         <!-- Lightning Talks -->
                         <!--
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>10am - 10:40am</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Lightning Talks</h3>
-                                <p><strong>Title of this Talk - Speaker Name</strong></p>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
-                                </p>
-                                <p><strong>Title of this Talk - Speaker Name</strong></p>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
-                                </p>
-                                <p><strong>Title of this Talk - Speaker Name</strong></p>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
-                                </p>
-                                <p><strong>Title of this Talk - Speaker Name</strong></p>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
-                                </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>10am - 10:40am</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Lightning Talks</h3>
+								<p><strong>Title of this Talk - Speaker Name</strong></p>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
+								</p>
+								<p><strong>Title of this Talk - Speaker Name</strong></p>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
+								</p>
+								<p><strong>Title of this Talk - Speaker Name</strong></p>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
+								</p>
+								<p><strong>Title of this Talk - Speaker Name</strong></p>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere.
+								</p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 1 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>10:40am - 11:20am</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>10:40am - 11:20am</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Mid-morning Break -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>11:20am - 11:40am</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <p>Mid-morning <strong>break</strong> with refreshments.</p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>11:20am - 11:40am</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<p>Mid-morning <strong>break</strong> with refreshments.</p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 2 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>11:40am - 12:20pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>11:40am - 12:20pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 3 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>12:20pm - 1pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>12:20pm - 1pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Lunch-->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>1pm - 2pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <p>Time for <strong>lunch</strong> in the North Hall, adjacent to the Ballroom.</p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>1pm - 2pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<p>Time for <strong>lunch</strong> in the North Hall, adjacent to the Ballroom.</p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 4 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>2pm - 2.40pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>2pm - 2.40pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 5 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>2:40pm - 3:20pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>2:40pm - 3:20pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Mid-afternoon Break -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>3:20pm - 3:40pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <p>Mid-afternoon <strong>break</strong> with refreshments.</p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>3:20pm - 3:40pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<p>Mid-afternoon <strong>break</strong> with refreshments.</p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 6 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>3:40pm - 4:20pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>3:40pm - 4:20pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 7 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>4:20pm - 5:00pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>4:20pm - 5:00pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Talk 8 -->
                         <!-- TBC
-                        <div class="row">
-                            <div class="col sm3 schedule-time">
-                                <p>5:00pm - 5:40pm</p>
-                            </div>
-                            <div class="col sm9 schedule-description">
-                                <h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
-                                <p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
-                            </div>
-                        </div>
-                        -->
+						<div class="row">
+							<div class="col sm3 schedule-time">
+								<p>5:00pm - 5:40pm</p>
+							</div>
+							<div class="col sm9 schedule-description">
+								<h3 class="schedule-talk-title">Title of this talk - Speaker Name</h3>
+								<p class="schedule-talk-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat eros sed dolor dignissim posuere. Nullam et semper est, vitae tempus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices </p>
+							</div>
+						</div>
+						-->
                         <!-- Closing Remarks -->
                         <div class="row">
                             <div class="col sm3 schedule-time">
