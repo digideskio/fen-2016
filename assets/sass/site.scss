@@ -830,8 +830,11 @@ header {
 }
 
 .sponsor-logo {
-	border-radius: rem(4px);
 	padding: rem(10px);
+
+	&.placeholder {
+		border-radius: rem(4px);
+	}
 }
 
 .sponsor-tier {
