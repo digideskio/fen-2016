@@ -8,34 +8,26 @@ module.exports = function(grunt) {
 			fancyName: 'FEN 2016',
 			// -------------------------------------
 			// Array of paths to Javascript files
-			// for inclusion in the HEADER.
-			// -------------------------------------
-			concatHead: [
-				'assets/js/lib/modernizr-custom.js',
-				'assets/js/header.js'
-			],
-
-			// -------------------------------------
-			// Array of paths to Javascript files
 			// for inclusion in the HEADER for IE.
 			// -------------------------------------
-			concatHeadIE: [
+			concatIE: [
 				'bower_components/es5-shim/es5-shim.js',
 				'bower_components/html5shiv/dist/html5shiv.js',
 				'bower_components/selectivizr/selectivizr.js',
 				'bower_components/respond/src/respond.js',
-				'assets/js/header_ie.js'
+				'assets/js/ie.js'
 			],
 
 			// -------------------------------------
 			// Array of paths to Javascript files
 			// for inclusion in the FOOTER.
 			// -------------------------------------
-			concatFoot: [
+			concatScripts: [
+				'assets/js/lib/modernizr-custom.js',
 				'assets/js/lib/jquery-1.12.0.js',
 				'bower_components/underscore/underscore.js',
 				'bower_components/slick-carousel/slick/slick.js',
-				'assets/js/footer.js'
+				'assets/js/scripts.js'
 			],
 		}
 	});

@@ -9,25 +9,18 @@ module.exports = {
 		// -------------------------------------
 		mangle: false,
 	},
-	// Header JS.
-	// -------------------------------------
-	header: {
-		files: {
-			'js/header.min.js': [ '<%= concat.header.dest %>' ]
-		}
-	},
 	// Header JS for IE.
 	// -------------------------------------
-	header_ie: {
+	ie: {
 		files: {
-			'js/header_ie.min.js': [ '<%= concat.header_ie.dest %>' ]
+			'js/ie.min.js': [ '<%= concat.ie.dest %>' ]
 		}
 	},
 	// Footer JS.
 	// -------------------------------------
-	footer: {
+	scripts: {
 		files: {
-			'js/footer.min.js': [ '<%= concat.footer.dest %>' ]
+			'js/scripts.min.js': [ '<%= concat.scripts.dest %>' ]
 		}
 	}
 };
