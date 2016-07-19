@@ -531,20 +531,20 @@ header {
 		border-radius: rem(4px);
 	}
 
-	.cssanimations &.left,
-	.cssanimations &.right {
-		animation-duration: 3s;
-		animation-timing-function: ease-in-out;
-		animation-iteration-count: infinite;
-	}
+	// .cssanimations &.left,
+	// .cssanimations &.right {
+	// 	animation-duration: 3s;
+	// 	animation-timing-function: ease-in-out;
+	// 	animation-iteration-count: infinite;
+	// }
 
-	.cssanimations &.left {
-		animation-name: left-slide;
-	}
+	// .cssanimations &.left {
+	// 	animation-name: left-slide;
+	// }
 
-	.cssanimations &.right {
-		animation-name: right-slide;
-	}
+	// .cssanimations &.right {
+	// 	animation-name: right-slide;
+	// }
 }
 
 .speaker-avatar,
