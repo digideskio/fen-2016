@@ -15,9 +15,11 @@ module.exports = {
             "prefixed",
             "testAllProps",
             "testProp",
-            "setClasses"
+            "setClasses",
         ],
-        "tests": [],
+        "tests": [
+            "cssanimations",
+        ],
         "excludeTests": [
             "hidden"
         ],

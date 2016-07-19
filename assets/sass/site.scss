@@ -497,6 +497,28 @@ header {
 	font-size: rem(28px);
 }
 
+@keyframes left-slide {
+	from {
+		left: -100%;
+	}
+
+	to {
+		left: auto;
+	}
+}
+
+
+@keyframes right-slide {
+	from {
+		right: -100%;
+	}
+
+	to {
+		right: auto;
+	}
+}
+
+
 .speaker {
 	cursor: pointer;
 	margin: rem(10px) 0;
@@ -507,6 +529,21 @@ header {
 	@include mq(sm) {
 		background-color: $colour--blue-dark;
 		border-radius: rem(4px);
+	}
+
+	.cssanimations &.left,
+	.cssanimations &.right {
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+
+	.cssanimations &.left {
+		animation-name: left-slide;
+	}
+
+	.cssanimations &.right {
+		animation-name: right-slide;
 	}
 }
 
