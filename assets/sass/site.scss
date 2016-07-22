@@ -78,7 +78,7 @@ a:link {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 20;
 
 	@include mq(sm) {
 		display: block;
@@ -121,6 +121,7 @@ a:link {
 		letter-spacing: 0.5px;
 		line-height: 1.5;
 		font-size: rem(18px);
+		text-decoration: none;
 
 		@include on-event {
 			color: $colour--blue-light;
@@ -171,7 +172,6 @@ a:link {
 			display: table-cell;
 			padding: rem(8px);
 			height: 10vh;
-			text-decoration: none;
 			vertical-align: middle;
 
 			@include mq(sm) {
@@ -302,32 +302,41 @@ button:not(.menu-toggle) {
 	}
 }
 
-.menu-toggle {
-	background: none;
+.menu-open {
+	background-color: $colour--blue-dark;
 	border: none;
-	height: rem(34px);
+	height: rem(44px);
+	left: 0;
 	padding: rem(5px);
-	width: rem(34px);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 15;
 
 	@include mq(sm) {
 		display: none;
 	}
 
+	@include on-event {
+		svg {
+			fill: $colour--blue-light;
+		}
+	}
+
 	svg {
 		height: rem(34px);
 		fill: $colour--white;
+		transition: fill ease-in-out 0.3s;
 		width: rem(34px);
 	}
 }
 
-.menu-back {
+.menu-close {
 	background: none;
 	border: none;
 	padding: 0;
 
 	.navigation.primary & {
-		height: auto;
-
 		@include mq(sm) {
 			display: none;
 		}
@@ -341,9 +350,14 @@ header {
 	background-size: cover;
 	background-position: center center;
 	border-bottom: 8px solid $colour--blue-dark;
+	margin-top: rem(44px);
 	padding: rem(40px);
 	position: relative;
 	text-align: center;
+
+	@include mq(sm) {
+		margin-top: 0;
+	}
 }
 
 .logo {
@@ -497,6 +511,12 @@ header {
 	font-size: rem(28px);
 }
 
+.speakers {
+	&:first-of-type {
+		margin-top: rem(50px);
+	}
+}
+
 @keyframes left-slide {
 	from {
 		left: -100%;
@@ -576,7 +596,7 @@ header {
 	}
 
 	@include mq(sm-to-md) {
-		padding-top: 7.5%;
+		padding-top: 8%;
 	}
 }
 
@@ -636,7 +656,7 @@ header {
 
 	a {
 		color: $colour--yellow;
-		// text-decoration: none;
+		text-decoration: none;
 
 		@include on-event {
 			color: $colour--blue-light;
