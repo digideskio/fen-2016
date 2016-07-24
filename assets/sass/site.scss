@@ -675,6 +675,217 @@ header {
 	}
 }
 
+// Section - Workshops
+.section-workshops-wrapper {
+	border-top: 0;
+}
+
+.section-workshops-content {
+	padding-top: rem(20px);
+}
+
+.workshops-headline-title,
+.workshops-lightning-title {
+	@include narrow;
+	letter-spacing: 3px;
+	margin-bottom: rem(20px);
+	margin-top: rem(50px);
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.workshops-headline-title {
+	font-size: rem(32px);
+}
+
+.workshops-lightning-title {
+	font-size: rem(28px);
+}
+
+.workshops {
+	&:first-of-type {
+		margin-top: rem(50px);
+	}
+}
+
+.workshop {
+	margin: rem(10px) 0;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+
+	// @include mq(sm) {
+		background-color: $colour--blue-dark;
+		border-radius: rem(4px);
+	// }
+
+	padding: 40px;
+
+	@include mq(sm) {
+		padding: 0px;
+	}
+
+	.schedule-description {
+
+		.schedule-talk-title {
+			color: $colour--yellow;
+		}
+
+		h4 {
+			text-transform: uppercase;
+			color: $colour--yellow;
+			font-size: rem(16px);
+			font-weight: bolder;
+			letter-spacing: 0.5px;
+			line-height: 1.4;
+			margin-bottom: 0;
+
+			@include mq(xs) {
+				font-size: rem(20px);
+				line-height: 1.5;
+			}
+
+			&:last-child {
+				margin-bottom: rem(22px);
+			}
+
+			&.smaller {
+				font-size: rem(10px);
+
+				@include mq(xs) {
+					font-size: rem(14px);
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+
+
+	// .cssanimations &.left,
+	// .cssanimations &.right {
+	// 	animation-duration: 3s;
+	// 	animation-timing-function: ease-in-out;
+	// 	animation-iteration-count: infinite;
+	// }
+
+	// .cssanimations &.left {
+	// 	animation-name: left-slide;
+	// }
+
+	// .cssanimations &.right {
+	// 	animation-name: right-slide;
+	// }
+
+	h4 {
+		a {
+			color: $colour--blue-light;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.workshop-avatar,
+.workshop-bio {
+	@include mq(sm) {
+		max-width: 50%;
+		width: 100%;
+	}
+}
+
+.workshop-avatar {
+	border-radius: rem(4px);
+
+	@include mq(sm) {
+		border-radius: none;
+		float: left;
+	}
+}
+
+.workshop-bio {
+	margin: auto;
+	padding: rem(15px);
+
+	@include mq(xs) {
+		padding: 7.25% rem(15px) rem(15px);
+	}
+
+	@include mq(sm) {
+		float: right;
+	}
+
+	@include mq(sm-to-md) {
+		padding-top: 8%;
+	}
+}
+
+.workshop-name {
+	color: $colour--blue-light;
+	font-size: rem(22px);
+	font-weight: 400;
+	letter-spacing: 1.5px;
+	line-height: 1.25;
+	margin: 0;
+	text-transform: uppercase;
+
+	@include mq(sm-to-md) {
+		font-size: rem(25px);
+	}
+
+	@include mq(md) {
+		font-size: rem(28px);
+	}
+
+	span {
+		@include mq(xs) {
+			display: block;
+		}
+	}
+}
+
+.workshop-title,
+.workshop-twitter {
+	font-size: rem(16px);
+	line-height: 1.25;
+	margin: rem(5px) 0;
+
+	@include mq(xs) {
+		margin: rem(10px) 0;
+	}
+
+	@include mq(sm-to-md) {
+		font-size: rem(17px);
+	}
+
+	@include mq(md) {
+		font-size: rem(18px);
+	}
+}
+
+.workshop-title {
+	span {
+		@include mq(xs) {
+			display: block;
+		}
+	}
+}
+
+.workshop-twitter {
+	font-weight: 400;
+
+	a {
+		color: $colour--yellow;
+		text-decoration: none;
+
+		@include on-event {
+			color: $colour--blue-light;
+		}
+	}
+}
+
 // Section - Schedule
 .schedule-table {
 	@include fen-row;
@@ -709,6 +920,9 @@ header {
 
 .schedule-time,
 .schedule-description {
+
+	text-align: left;
+
 	@include mq(sm) {
 		padding: rem(30px) rem(20px);
 	}
