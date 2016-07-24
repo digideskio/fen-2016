@@ -128,7 +128,7 @@ a:link {
 		}
 
 		@include mq(sm) {
-			font-size: rem(14px);
+			font-size: rem(12px);
 		}
 
 		@include mq(md) {
@@ -564,6 +564,17 @@ header {
 	// .cssanimations &.right {
 	// 	animation-name: right-slide;
 	// }
+
+	h4 {
+		a {
+			color: $colour--blue-light;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
 
 .speaker-avatar,
@@ -705,6 +716,34 @@ header {
 	> :first-child {
 		@include mq(sm) {
 			margin-top: 0;
+		}
+	}
+
+	ul {
+		li {
+			font-size: rem(16px);
+			font-weight: 200;
+			letter-spacing: 0.5px;
+			line-height: 1.4;
+			margin-bottom: 0;
+
+			@include mq(xs) {
+				font-size: rem(20px);
+				line-height: 1.5;
+			}
+
+			&:last-child {
+				margin-bottom: rem(22px);
+			}
+
+			&.smaller {
+				font-size: rem(10px);
+
+				@include mq(xs) {
+					font-size: rem(14px);
+					line-height: 1.2;
+				}
+			}
 		}
 	}
 }
