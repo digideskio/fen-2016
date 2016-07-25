@@ -715,18 +715,21 @@ header {
 	text-align: center;
 
 	// @include mq(sm) {
-		background-color: $colour--blue-dark;
-		border-radius: rem(4px);
+	background-color: $colour--blue-dark;
+	border-radius: rem(4px);
 	// }
-
 	padding: 40px;
 
 	@include mq(sm) {
 		padding: 0px;
 	}
 
-	.schedule-description {
+	.cta {
+		margin-bottom: 0;
+		margin-top: rem(40px);
+	}
 
+	.schedule-description {
 		.schedule-talk-title {
 			color: $colour--yellow;
 		}
@@ -759,7 +762,6 @@ header {
 			}
 		}
 	}
-
 
 	// .cssanimations &.left,
 	// .cssanimations &.right {
@@ -920,7 +922,6 @@ header {
 
 .schedule-time,
 .schedule-description {
-
 	text-align: left;
 
 	@include mq(sm) {
