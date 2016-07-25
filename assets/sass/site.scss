@@ -357,6 +357,7 @@ header {
 
 	@include mq(sm) {
 		margin-top: 0;
+		padding: rem(80px);
 	}
 }
 
