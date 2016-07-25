@@ -16,7 +16,7 @@ body {
 	color: $colour--white;
 	font-family: "Source Sans Pro", sans-serif;
 
-	@include mq(sm) {
+	@include mq(md) {
 		padding-top: rem(64px);
 	}
 }
@@ -80,7 +80,7 @@ a:link {
 	width: 100%;
 	z-index: 20;
 
-	@include mq(sm) {
+	@include mq(md) {
 		display: block;
 		height: rem(64px);
 		max-height: rem(64px);
@@ -90,7 +90,7 @@ a:link {
 .navigation {
 	position: fixed;
 
-	@include mq(sm) {
+	@include mq(md) {
 		position: relative;
 	}
 
@@ -102,10 +102,10 @@ a:link {
 		display: block;
 		margin: 0;
 
-		@include mq(sm) {
-			display: inline-block;
-			margin: 0 rem(6px);
-		}
+		// @include mq(md) {
+		// 	display: inline-block;
+		// 	margin: 0 rem(6px);
+		// }
 
 		@include mq(md) {
 			margin: 0 rem(8px);
@@ -127,9 +127,9 @@ a:link {
 			color: $colour--blue-light;
 		}
 
-		@include mq(sm) {
-			font-size: rem(12px);
-		}
+		// @include mq(sm) {
+		// 	font-size: rem(12px);
+		// }
 
 		@include mq(md) {
 			font-size: rem(16px);
@@ -142,7 +142,7 @@ a:link {
 		text-align: center;
 		text-transform: uppercase;
 
-		@include mq(sm) {
+		@include mq(md) {
 			margin-bottom: rem(10px);
 			margin-top: rem(10px);
 			padding: rem(10px);
@@ -153,7 +153,7 @@ a:link {
 			display: table;
 			width: 100%;
 
-			@include mq(sm) {
+			@include mq(md) {
 				display: block;
 			}
 		}
@@ -161,7 +161,7 @@ a:link {
 		li {
 			display: table-row;
 
-			@include mq(sm) {
+			@include mq(md) {
 				display: inline-block;
 			}
 		}
@@ -171,21 +171,17 @@ a:link {
 			color: $colour--yellow;
 			display: table-cell;
 			padding: rem(8px);
-			height: 10vh;
+			height: 9.0909090909vh;
 			vertical-align: middle;
-
-			@include mq(sm) {
-				display: inline-block;
-				height: auto;
-			}
 
 			@include on-event {
 				background-color: $colour--blue-light;
 				color: $colour--blue-dark;
 			}
 
-			@include mq(sm) {
+			@include mq(md) {
 				display: inline-block;
+				height: auto;
 				padding: 0;
 
 				@include on-event {
@@ -202,7 +198,7 @@ a:link {
 		}
 
 		.button-alt {
-			@include mq(sm) {
+			@include mq(md) {
 				background-color: $colour--yellow;
 				border: 1px solid black;
 				border-bottom-width: 2px;
@@ -232,7 +228,7 @@ a:link {
 	}
 
 	.right {
-		@include mq(sm) {
+		@include mq(md) {
 			float: right;
 		}
 	}
@@ -313,7 +309,7 @@ button:not(.menu-toggle) {
 	width: 100%;
 	z-index: 15;
 
-	@include mq(sm) {
+	@include mq(md) {
 		display: none;
 	}
 
@@ -337,7 +333,7 @@ button:not(.menu-toggle) {
 	padding: 0;
 
 	.navigation.primary & {
-		@include mq(sm) {
+		@include mq(md) {
 			display: none;
 		}
 	}
