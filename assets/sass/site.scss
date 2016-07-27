@@ -668,6 +668,7 @@ header {
 
 		@include on-event {
 			color: $colour--blue-light;
+			text-decoration: underline;
 		}
 	}
 }
