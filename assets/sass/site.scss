@@ -36,15 +36,6 @@ p {
 	&:last-child {
 		margin-bottom: 0;
 	}
-
-	&.smaller {
-		font-size: rem(10px);
-
-		@include mq(xs) {
-			font-size: rem(14px);
-			line-height: 1.2;
-		}
-	}
 }
 
 strong {
@@ -101,11 +92,6 @@ a:link {
 	li {
 		display: block;
 		margin: 0;
-
-		// @include mq(md) {
-		// 	display: inline-block;
-		// 	margin: 0 rem(6px);
-		// }
 
 		@include mq(md) {
 			margin: 0 rem(8px);
@@ -221,9 +207,17 @@ a:link {
 		color: $colour--yellow;
 		padding: rem(15px) 0;
 		margin-bottom: rem(20px);
+		position: relative;
 
 		@include mq(md) {
 			margin-bottom: 0;
+		}
+
+		li {
+			@include mq(xs) {
+				display: inline-block;
+				margin: 0 rem(6px);
+			}
 		}
 	}
 
