@@ -1187,15 +1187,16 @@ header {
 
 // Section - Sponsors
 .sponsors {
-	margin-top: rem(50px);
+	margin: rem(50px) 0;
 	text-align: center;
 }
 
 .sponsor-logo {
-	padding: rem(10px);
+	// padding: rem(10px);
 
 	&.placeholder {
 		border-radius: rem(4px);
+		max-width: rem(113px);
 	}
 }
 
@@ -1206,7 +1207,7 @@ header {
 
 .sponsor-tier-name {
 	letter-spacing: 3px;
-	margin: rem(20px) 0;
+	margin: rem(40px) 0;
 	text-transform: uppercase;
 
 	&.steel {
